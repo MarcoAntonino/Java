@@ -1,0 +1,21 @@
+import java.util.GregorianCalendar;
+
+public class Autore {
+	
+	private String nome;
+	private String cognome;
+	private GregorianCalendar dataNascita;
+	private String luogoNascita;
+	private GregorianCalendar dataMorte;
+	private String luogoMorte;
+	
+	public Autore() {
+		
+	}
+	
+	
+
+
+	
+
+}

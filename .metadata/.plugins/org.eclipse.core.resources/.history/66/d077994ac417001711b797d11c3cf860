@@ -1,0 +1,12 @@
+import java.util.GregorianCalendar;
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		Autore a1 = new Autore ("Pinco", "Pallino"
+				, 12-3-1988, "Tunisi"
+				, 15-9-2016, "Roma");
+	}
+
+}

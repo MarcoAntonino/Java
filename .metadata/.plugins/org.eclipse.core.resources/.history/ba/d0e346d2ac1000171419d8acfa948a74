@@ -1,0 +1,15 @@
+package view;
+
+import Model.Mazzo;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Mazzo m = new Mazzo();
+		m.crea();
+		
+		System.out.println(m);
+	}
+
+}

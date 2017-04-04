@@ -1,0 +1,28 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+
+public class Test {
+	
+	
+	public static void main(String[] args) {
+		
+		GregorianCalendar dataNPinco = new GregorianCalendar(1901,11,23);
+		GregorianCalendar dataMPinco = new GregorianCalendar(2001,10,6);
+				
+		Autore a1 = new Autore ("Pinco", "Pallino"
+				, dataNPinco, "Tunisi"
+				, dataMPinco, "Roma");
+		
+		System.out.println("è vivo? "+a1.isVivo()+"\n");
+		
+		System.out.println("Nominativo: "+a1.nomimativoAutore()+"\n");
+		
+		
+		System.out.println(a1);
+		
+		Editore e1 = new Editore ("Feltrinelli spa", "Via dell'Arcivescovado 9, 10091 Torino",
+				"0114055789", "info@feltrinelli.it", "www.feltrinelli.it");
+	}
+
+}

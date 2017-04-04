@@ -1,0 +1,7 @@
+
+public class Editore {
+	
+	private String ragioneSociale;
+	private String partitaIva; 
+
+}

@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+
+public class Test {
+	
+	
+	public static void main(String[] args) {
+		
+		GregorianCalendar dataNPinco = new GregorianCalendar(1901,11,23);
+		GregorianCalendar dataMPinco = new GregorianCalendar(2001,10,6);
+		
+		GregorianCalendar dataNCaio = new GregorianCalendar(1986,10,6);
+
+		
+	
+				
+		Autore a1 = new Autore ("Pinco", "Pallino"
+				, dataNPinco, "Tunisi"
+				, dataMPinco, "Roma");
+		
+		Autore caio = new Autore ("Caio", "De Roma", dataNCaio, "Forlì");
+		
+		System.out.println("è vivo? "+caio.isVivo()+"\n");
+		
+		System.out.println("Nominativo: "+caio.nomimativoAutore()+"\n");
+		
+		
+		System.out.println(caio);
+		
+		Editore e1 = new Editore ("Feltrinelli spa", "Via dell'Arcivescovado 9, 10091 Torino",
+				"0114055789", "info@feltrinelli.it", "www.feltrinelli.it");
+		
+		System.out.println(e1.getRagioneSociale()+"\n");
+		System.out.println(e1+"\n");
+		
+		Libro l1 = new Libro ("Le tigri", 12343564, a1, e1, 122, 1999);
+		System.out.println(l1+"\n");
+		
+		ArrayList<Libro> scaffale = new ArrayList();
+		
+		
+		
+	}
+
+}

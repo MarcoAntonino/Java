@@ -1,0 +1,14 @@
+import java.util.GregorianCalendar;
+
+
+public class Test {
+	
+	public GregorianCalendar dataNPinco = new GregorianCalendar(1988, 1, 10, 9, 00);
+
+	public static void main(String[] args) {
+		Autore a1 = new Autore ("Pinco", "Pallino"
+				, 12, "Tunisi"
+				, 12, "Roma");
+	}
+
+}

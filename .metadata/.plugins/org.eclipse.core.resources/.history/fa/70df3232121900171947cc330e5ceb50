@@ -1,0 +1,13 @@
+import java.util.GregorianCalendar;
+
+public class Libro {
+	
+	private String titolo;
+	private int isbn;
+	private Autore autore;
+	private Editore editore;
+	private int numPagine;
+	private GregorianCalendar annoPubb;
+	
+
+}
