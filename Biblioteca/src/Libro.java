@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Libro {
@@ -7,22 +8,27 @@ public class Libro {
 	
 	private String titolo;
 	private int isbn;
-	private Autore autore;
+	private ArrayList<Autore> autori;
 	private Editore editore;
 	private int numPagine;
 	private int annoPubb;
+	private Posizione posizione;
+	private StatoLibro statoLibro;
 	
 	public Libro() {
 		
 	}
 
-	public Libro(String titolo, int isbn, Autore autore, Editore editore, int numPagine, int annoPubb) {
+	public Libro(String titolo, int isbn, ArrayList<Autore> autori, Editore editore, int numPagine, int annoPubb,
+				Posizione posizione, StatoLibro statoLibro) {
 		this.titolo = titolo;
 		this.isbn = isbn;
-		this.autore = autore;
+		this.autori = autori;
 		this.editore = editore;
 		this.numPagine = numPagine;
 		this.annoPubb = annoPubb;
+		this.posizione = posizione;
+		this.statoLibro = statoLibro;
 	}
 
 	public String getTitolo() {
@@ -41,12 +47,13 @@ public class Libro {
 		this.isbn = isbn;
 	}
 
-	public Autore getAutore() {
-		return autore;
+	
+	public ArrayList<Autore> getAutori() {
+		return autori;
 	}
 
-	public void setAutore(Autore autore) {
-		this.autore = autore;
+	public void setAutori(ArrayList<Autore> autori) {
+		this.autori = autori;
 	}
 
 	public Editore getEditore() {
@@ -73,13 +80,70 @@ public class Libro {
 		this.annoPubb = annoPubb;
 	}
 
+	public Posizione getPosizione() {
+		return posizione;
+	}
+
+	public void setPosizione(Posizione posizione) {
+		this.posizione = posizione;
+	}
+
+	public StatoLibro getStatoLibro() {
+		return statoLibro;
+	}
+
+	public void setStatoLibro(StatoLibro statoLibro) {
+		this.statoLibro = statoLibro;
+	}
+	
+	public void StatoLibro(){
+		
+		switch (statoLibro) {
+		case DISPONIBILE:
+			System.out.println("Il libro è disponibile e la sua posizione è " + posizione);
+			
+			break;
+		case PRESTATO:
+			System.out.println("Il libro è attualmente in prestito");
+			
+			break;
+		case SMARRITO:
+			System.out.println("Oh no! Il libro è stato smarrito");
+		default:
+			break;
+		}
+	}
+
 	@Override
 	public String toString() {
-		return "Libro [" + (titolo != null ? "titolo=" + titolo + ", " : "") + "isbn=" + isbn + ", "
-				+ (autore != null ? "autore=" + autore.nomimativoAutore() + ", " : "")
-				+ (editore != null ? "editore=" + editore.getRagioneSociale() + ", " : "") + "numPagine=" + numPagine + ", annoPubb="
-				+ annoPubb + "]";
+		String msg="";
+		msg+="titolo: " + titolo 
+		   + "\nautori: ";
+		
+		//guarda come si fa a chiamare un metodo dentro a un foreach
+		for (Autore o: autori)
+			msg+=o.nomimativoAutore()+" ";
+		
+		msg+="\neditore: " + editore.getRagioneSociale()
+		   + "\nanno pubblicazione: " + annoPubb
+		   + "\nnum. pagine: " + numPagine 
+		   + "\nisbn: " + isbn
+		   + "\ncosto stampa: " + costoStampa(numPagine)
+		   + "\nStato: " + statoLibro;
+		
+		return msg;
 	}
+
+	public double costoStampa(int numPagine) {
+		
+		double costoTot;
+		
+		costoTot = (double)numPagine*COSTO_PER_PAGINA+COSTO_FISSO;
+		
+		return costoTot;
+	}
+
+	
 	
 	
 	

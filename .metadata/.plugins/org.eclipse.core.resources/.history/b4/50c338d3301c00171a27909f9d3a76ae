@@ -1,0 +1,10 @@
+
+public class Posizione {
+	
+	private String stanza;
+	private int scaffale;
+	private int ripiano;
+	
+	
+
+}

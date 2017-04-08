@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import javax.security.sasl.AuthorizeCallback;
+
 
 public class Test {
 	
@@ -42,43 +44,32 @@ public class Test {
 		//System.out.println(e1.getRagioneSociale()+"\n");
 		//System.out.println(e1+"\n");
 		
-		Libro l1 = new Libro ("Le tigri", 12343564, a1, e1, 122, 1999);
-		//System.out.println(l1+"\n");
+		ArrayList<Autore> aut1 = new ArrayList<Autore>();
+		aut1.add(a1);
+		aut1.add(caio);
+
+		Posizione psl1 = new Posizione ("Rossa", 1,111);
+		Libro l1 = new Libro ("Le tigri", 12343564, aut1, e1, 122, 1999, psl1, StatoLibro.DISPONIBILE);
+		System.out.println(l1+"\n");
+		l1.StatoLibro();
 		
-		Libro l2 = new Libro ("I romani a Forlì", 789456, caio, mondadori, 789, 2016);
+		ArrayList<Autore> aut2 = new ArrayList<Autore>();
+		aut2.add(sempronio);
+		Posizione psl2 = new Posizione ("Gialla", 2,222);
+		Libro l2 = new Libro ("I romani a Forlì", 789456, aut2, mondadori, 789, 2016, psl2, StatoLibro.PRESTATO);
+		System.out.println(l2+"\n");
+		l2.StatoLibro();
 		
-		//System.out.println(l1+"\n");
-		
-		Libro diSempronio = new Libro ("I romani al mare", 4566465, sempronio, mondadori, 40, 2016);
-		Libro l3 = new Libro ("Domani vedremo", 45646, a1, e1, 54, 1900);
+		//Libro diSempronio = new Libro ("I romani al mare", 4566465, sempronio, mondadori, 40, 2016);
+		//Libro l3 = new Libro ("Domani vedremo", 45646, a1, e1, 54, 1900);
 		
 		
 		
 		
-			ArrayList<Libro> posScaf1Rip1 = new ArrayList(); // le posizioni sullo scaffale 1
-		posScaf1Rip1.add(l1);
-		posScaf1Rip1.add(l2);
 		
-		System.out.println("Elenco libri ripiano 1:");
-		for(int i=0; i<posScaf1Rip1.size(); i++)
-		{
-			System.out.println(posScaf1Rip1.get(i)); // viene restituito il tostring
-		}
 		
-		ArrayList<Libro> posScaf1Rip2 = new ArrayList(); // le posizioni sullo scaffale 2
-		posScaf1Rip2.add(diSempronio);
-		posScaf1Rip2.add(l3);
 		
-		System.out.println("Elenco libri ripiano 2:");
-		for(int i=0; i<posScaf1Rip2.size(); i++)
-		{
-			System.out.println(posScaf1Rip2.get(i)); // viene restituito il tostring
-		}
-		
-		ArrayList<ArrayList> scaf1SRossa = new ArrayList();
-		scaf1SRossa.add(posScaf1Rip1);
-		scaf1SRossa.add(posScaf1Rip2);
-		
+			
 		
 		
 	}
