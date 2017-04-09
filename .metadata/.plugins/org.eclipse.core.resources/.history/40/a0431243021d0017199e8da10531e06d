@@ -1,0 +1,21 @@
+package ProveMarco;
+
+import java.util.Scanner;
+
+public class TestVari {
+
+	public static void main(String[] args) {
+		String msg="Ciao ";
+		String nome;
+		
+		Scanner tastiera = new Scanner(System.in);
+		
+		System.out.println("Scrivi il tuo nome");
+		nome=tastiera.nextLine();
+		
+		msg+=nome;
+		
+
+	}
+
+}

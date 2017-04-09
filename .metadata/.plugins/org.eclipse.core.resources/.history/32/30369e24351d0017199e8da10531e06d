@@ -1,0 +1,16 @@
+package proveMarco;
+
+public class Persona {
+	
+	private String nome;
+	private String Cognome;
+	
+	public Persona() {
+	}
+	
+	
+
+	
+	
+
+}

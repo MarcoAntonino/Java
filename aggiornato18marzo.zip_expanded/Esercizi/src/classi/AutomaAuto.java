@@ -74,6 +74,18 @@ public class AutomaAuto {
 	 * -40 ibrida
 	 */
 	
+	public int getVelocita() {
+		return velocita;
+	}
+
+
+
+	public void setVelocita(int velocita) {
+		this.velocita = velocita;
+	}
+
+
+
 	public int velocitaMax(){
 		
 		int v = cilindrata/10;

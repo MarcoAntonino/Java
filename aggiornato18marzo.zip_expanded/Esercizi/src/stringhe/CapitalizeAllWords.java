@@ -26,7 +26,7 @@ public class CapitalizeAllWords {
 			parole[i]=capitalize(parole[i]);
 			
 		
-		//Consente di tirre fuori da una stringa un'array di stringhe utilizzando
+		//Consente di tirare fuori da una stringa un'array di stringhe utilizzando
 		//un separatore
 		
 		String join = String.join(" ", parole);

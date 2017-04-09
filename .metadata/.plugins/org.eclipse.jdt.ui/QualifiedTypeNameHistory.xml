@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="StatoLibro"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.security.sasl.AuthorizeCallback"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

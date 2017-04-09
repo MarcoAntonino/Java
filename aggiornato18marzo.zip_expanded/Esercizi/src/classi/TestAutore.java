@@ -8,10 +8,6 @@ public class TestAutore {
 		Data dMortePaveseCesare = new Data (27,8,1950);
 		
 		
-		Autore paveseCesare = new Autore("Cesare", "Pavese", "Santo Stefano Belbo",  
-							dNascitaPaveseCesare, "Torino", dMortePaveseCesare);
-		
-		System.out.println(paveseCesare);
 		
 				
 
