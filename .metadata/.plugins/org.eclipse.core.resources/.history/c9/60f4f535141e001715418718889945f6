@@ -1,0 +1,14 @@
+package interfacce;
+
+public interface IAtletaUniversale extends IAtleta,INuotatore,Cloneable{
+	/*
+	 * L'ereditarietà sulle interfacce può essere polimorfata
+	 */
+	
+	public String mangio();
+	public String bevo();
+	Object clone() throws CloneNotSupportedException;
+	
+
+
+}

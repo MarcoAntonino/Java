@@ -68,6 +68,41 @@ public class Atleta implements IAtleta, INuotatore, IAtletaUniversale{
 		}
 		
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((club == null) ? 0 : club.hashCode());
+		result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
+		result = prime * result + ((nominativo == null) ? 0 : nominativo.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Atleta other = (Atleta) obj;
+		if (club == null) {
+			if (other.club != null)
+				return false;
+		} else if (!club.equals(other.club))
+			return false;
+		if (disciplina == null) {
+			if (other.disciplina != null)
+				return false;
+		} else if (!disciplina.equals(other.disciplina))
+			return false;
+		if (nominativo == null) {
+			if (other.nominativo != null)
+				return false;
+		} else if (!nominativo.equals(other.nominativo))
+			return false;
+		return true;
+	}
+	@Override
 	public String toString() {
 		return "Atleta [" 
 				+ (nominativo != null ? "nominativo=" + nominativo + ", " : "")

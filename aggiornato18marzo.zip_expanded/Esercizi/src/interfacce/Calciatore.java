@@ -1,6 +1,6 @@
 package interfacce;
 
-public class Calciatore extends Atleta implements Cloneable, Comparable {
+public class Calciatore extends Atleta implements Comparable, Cloneable {
 	
 	private int pettorina;
 	private int partiteGiocate;
@@ -80,6 +80,8 @@ public class Calciatore extends Atleta implements Cloneable, Comparable {
 		if (getClass() != obj.getClass()) //restituisce il tipo di classe
 			return false;
 		Calciatore other = (Calciatore) obj; //casting
+		//if(!super.equals(/*(Atleta)*/obj))
+			//return false;
 		if (this.getNominativo() != other.getNominativo())
 			return false;
 		if (this.getClub() != other.getClub())
