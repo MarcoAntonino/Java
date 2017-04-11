@@ -1,0 +1,14 @@
+
+public class Venditore extends Persona{
+	
+	private String settore;
+
+	public Venditore(String settore) {
+		this.settore = settore;
+	}
+	
+	
+	
+	
+
+}

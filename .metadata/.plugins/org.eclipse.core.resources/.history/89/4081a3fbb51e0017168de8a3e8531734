@@ -1,0 +1,20 @@
+
+public class Meccanico extends Persona {
+	
+	private String settore;
+	
+	
+
+	@Override
+	public double tredicesima() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		
+		return super.clone();
+	}
+
+}

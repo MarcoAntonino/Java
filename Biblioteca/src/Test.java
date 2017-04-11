@@ -64,15 +64,10 @@ public class Test {
 		//Libro l3 = new Libro ("Domani vedremo", 45646, a1, e1, 54, 1900);
 		
 		
-		
-		
-		
-		
-		
-			
-		
-		
 	}
 
 
 }
+
+
+

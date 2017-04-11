@@ -1,0 +1,10 @@
+
+public class Meccanico extends Persona {
+
+	@Override
+	public double tredicesima() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

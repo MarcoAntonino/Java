@@ -7,7 +7,7 @@
 		<item value="false" key="updateTextualMatches"/>
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
-		<item value="true" key="OmitCallToSuper"/>
+		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>

@@ -1,0 +1,9 @@
+
+public class Prodotto {
+	
+	private int codice;
+	private String prodotto;
+	private String descrizione;
+	private double prezzo;
+
+}

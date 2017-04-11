@@ -1,0 +1,11 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Venditore v1 = new Venditore("Marco", "Antonino", 1000, "moto");
+		System.out.println(v1);
+
+	}
+
+}

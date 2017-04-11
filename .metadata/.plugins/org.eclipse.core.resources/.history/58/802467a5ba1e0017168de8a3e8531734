@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Venditore v1 = new Venditore("Marco", "Antonino", 1000, "moto");
+		System.out.println(v1);
+		Venditore v2 = new Venditore("Luigi", "Bottassi", 1000, "auto");
+		System.out.println(v2);
+		
+		ArrayList<Venditore> vrv2 = new ArrayList<Venditore>();
+		
+		ResponsabileVenditori rv2 = new ResponsabileVenditori("Cesare","Venditori" , 2000, "auto", vrv2);
+		
+		
+		Meccanico m1 = new Meccanico("Marco", "Panzanaro", 1200, "auto");
+		System.out.println(m1);
+
+		
+		
+
+	}
+
+}

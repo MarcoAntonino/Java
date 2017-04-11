@@ -1,0 +1,7 @@
+
+public class Prodotti extends Prodotto {
+	
+	private int qOrdinata;
+	
+
+}

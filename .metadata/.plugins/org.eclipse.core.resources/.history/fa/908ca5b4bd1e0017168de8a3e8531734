@@ -1,0 +1,4 @@
+
+public class Prodotti extends Prodotto {
+
+}
