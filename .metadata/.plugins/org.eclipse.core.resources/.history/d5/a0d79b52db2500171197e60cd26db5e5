@@ -1,0 +1,8 @@
+package threading;
+
+public class PingPong2 {
+	
+	private String frase;
+	private int riposo;
+
+}

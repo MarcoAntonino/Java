@@ -1,0 +1,18 @@
+package threading;
+
+import java.util.Calendar;
+
+public class TestDatario {
+
+	public static void main(String[] args) {
+		
+		Datario d1 = new Datario();
+		
+	}
+	
+	public String giornoSettimana(){
+		
+		data.get(Calendar.DAY_OF_WEEK);
+	}
+
+}

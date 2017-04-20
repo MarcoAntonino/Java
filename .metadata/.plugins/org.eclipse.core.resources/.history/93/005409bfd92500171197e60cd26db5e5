@@ -1,0 +1,16 @@
+package threading;
+
+public class PingPong extends Thread{
+	
+	private String frase;
+	private int riposo;
+	
+	public PingPong(String frase, int riposo) {
+		
+		this.frase = frase;
+		this.riposo = riposo;
+	}
+	
+	
+
+}

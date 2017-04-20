@@ -1,0 +1,49 @@
+package threading;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Datario extends Thread {
+	
+	private GregorianCalendar oraCorrente;
+
+	public Datario() {
+		this.oraCorrente=oraCorrente;
+		start();
+	}
+
+	public GregorianCalendar getOraCorrente() {
+		return oraCorrente;
+	}
+
+	public void setOraCorrente(GregorianCalendar oraCorrente) {
+		this.oraCorrente = oraCorrente;
+	}
+	
+	public String ottieniData(GregorianCalendar data)
+	{data.setLenient(false);
+	String dataStringa = data.get(Calendar.DAY_OF_MONTH)
+			+"/"+data.get(Calendar.MONTH)+"/"+data.get(Calendar.YEAR);
+	return dataStringa;
+	}
+
+	@Override
+	public void run() {
+		
+		while(true){
+			System.out.println(ottieniData(oraCorrente));
+			try {
+				sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	
+	
+	
+
+}

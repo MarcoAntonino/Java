@@ -1,0 +1,12 @@
+package threading;
+
+public class TestPingPong {
+
+	public static void main(String[] args) {
+		
+		PingPong ping = new PingPong("ping",5000);
+		PingPong pong = new PingPong("pong",1000);
+
+	}
+
+}

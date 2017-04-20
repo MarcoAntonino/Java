@@ -1,0 +1,13 @@
+package threading;
+
+public class TestPingPong {
+
+	public static void main(String[] args) {
+		
+		PingPong ping = new PingPong("ping",5000);
+		Thread.sleep(2500);
+		PingPong pong = new PingPong("pong",5000);
+
+	}
+
+}

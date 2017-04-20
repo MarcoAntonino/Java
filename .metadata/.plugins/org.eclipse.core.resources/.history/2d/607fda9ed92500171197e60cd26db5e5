@@ -1,0 +1,16 @@
+package threading;
+
+public class PingPong {
+	
+	private String frase;
+	private int riposo;
+	
+	public PingPong(String frase, int riposo) {
+		super();
+		this.frase = frase;
+		this.riposo = riposo;
+	}
+	
+	
+
+}

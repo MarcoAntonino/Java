@@ -1,8 +1,0 @@
-package ProveMarco;
-
-public class Snippet {
-	public static void main(String[] args) {
-		tastiera.close();
-	}
-}
-

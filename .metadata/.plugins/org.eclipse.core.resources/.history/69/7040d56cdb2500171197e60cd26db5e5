@@ -1,0 +1,36 @@
+package threading;
+
+public class PingPong2 implements Runnable{
+	
+	private String frase;
+	private int riposo;
+	
+	public PingPong2(String frase, int riposo) {
+		super();
+		this.frase = frase;
+		this.riposo = riposo;
+	}
+
+	public String getFrase() {
+		return frase;
+	}
+
+	public void setFrase(String frase) {
+		this.frase = frase;
+	}
+
+	public int getRiposo() {
+		return riposo;
+	}
+
+	public void setRiposo(int riposo) {
+		this.riposo = riposo;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package threading;
+
+import java.util.GregorianCalendar;
+
+public class Datario {
+	
+	private GregorianCalendar oraCorrente;
+	
+	
+
+}

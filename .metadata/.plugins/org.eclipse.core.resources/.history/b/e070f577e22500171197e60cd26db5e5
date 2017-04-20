@@ -1,0 +1,54 @@
+package threading;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Datario extends Thread {
+	
+	private GregorianCalendar data;
+
+	public Datario() {
+		data = new GregorianCalendar();
+		start();
+	}
+	
+	public String giornoSettimana(){
+		
+		String[]giorni ={"Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"}
+		
+		return giorni[data.get(Calendar.DAY_OF_WEEK)];
+		}
+	
+	public String nomeMese(){
+		String[] mesi = {"Gennaio"};
+		return mese[data.get(Calendar.MONTH)];
+	}
+	
+	public String dataLetterale(){
+		
+		return "";
+		
+	}
+	
+	public String dataLineare(){
+		SimpleDateFormat sdf = new SimpledateFormat("dd/MM/yyyy");
+		return sdf.format(data.getTime());
+	}
+	
+	public String oraLineare(){
+		SimpleDateFormat sdf = new SimpledateFormat("hh:mm:ss");
+		return sdf.format(data.getTime());
+	}
+	
+	
+		
+	
+	}
+
+	
+	
+	
+	
+
+

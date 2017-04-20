@@ -1,0 +1,11 @@
+package threading;
+
+public class TestDatario {
+
+	public static void main(String[] args) {
+		
+		Datario d1 = new Datario();
+		
+	}
+
+}

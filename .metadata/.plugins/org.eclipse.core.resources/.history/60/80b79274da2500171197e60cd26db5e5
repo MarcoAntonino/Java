@@ -1,0 +1,10 @@
+package threading;
+
+public class TestPingPong {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
