@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Datario.java&apos; to &apos;NuoviEsercizi/src/threading&apos;&#x0D;&#x0A;- Original project: &apos;NuoviEsercizi&apos;&#x0D;&#x0A;- Destination element: &apos;NuoviEsercizi/src/threading&apos;&#x0D;&#x0A;- Original element: &apos;threading.Datario.java&apos;" description="Copy compilation unit" destination="/src&lt;threading" element1="/src&lt;threading{Datario.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1492780090991" units="1" version="1.0"/>
+</session>

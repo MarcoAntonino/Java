@@ -10,6 +10,8 @@ public final class Ordine {
 	private Venditore venditore;
 	
 	public Ordine() {
+		
+		data = new GregorianCalendar(); //un ordine deve avere una data, al massimo poi la modifico
 	}
 
 	public Ordine(int idOrdine, GregorianCalendar data, ArrayList<Prodotto> listaDiProdotti, Venditore venditore) {
