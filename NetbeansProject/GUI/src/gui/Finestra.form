@@ -79,6 +79,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTesto">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTestoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnInvia">
       <Properties>

@@ -31,9 +31,9 @@ public class PingPong extends Thread{
 	
 	@Override
 	public void run() {
-		// metodo che mantiene in vita l'oggetto
 		
-		while(true){
+		
+		while(true){ // metodo che mantiene in vita l'oggetto
 			System.out.println(frase);
 			try {
 				sleep(riposo); //millisecondi di riposo. Metodo statico della classe Thread.

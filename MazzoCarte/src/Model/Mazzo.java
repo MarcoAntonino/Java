@@ -7,7 +7,7 @@ public class Mazzo {
 	
 	private Carta[] mazzo; //sto facendo un'associazione fra classe mazzo e classe carta
 	/*
-	 * La relazione 1:n si va a realizzare in porgrammazione con un array
+	 * La relazione 1:n si va a realizzare in programmazione con un array
 	 * Genera una dipendenza fra carta e mazzo cioè se modifico la classe carta 
 	 * il mazzo dipende da questa variazione
 	 */

@@ -45,6 +45,12 @@ public class Finestra extends javax.swing.JFrame {
 
         lblTesto.setText("Testo");
 
+        txtTesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTestoActionPerformed(evt);
+            }
+        });
+
         btnInvia.setText("Invia");
         btnInvia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +113,10 @@ public class Finestra extends javax.swing.JFrame {
         txtRisultato.setText("Hai digitato: "+testo);
         
     }//GEN-LAST:event_btnInviaActionPerformed
+
+    private void txtTestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTestoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTestoActionPerformed
 
     /**
      * @param args the command line arguments
