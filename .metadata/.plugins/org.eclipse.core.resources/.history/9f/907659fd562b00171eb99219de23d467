@@ -1,0 +1,15 @@
+package filetesto;
+
+public class ScriviFileTesto {
+
+	public static void main(String[] args) {
+		// Scrittura su file di testo
+		
+		String path = "file.txt";
+		String testo = "Pino dei Palazzi è stato qui!";
+		
+		
+
+	}
+
+}

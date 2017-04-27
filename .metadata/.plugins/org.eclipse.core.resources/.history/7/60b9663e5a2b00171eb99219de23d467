@@ -1,0 +1,14 @@
+package filetesto;
+
+public class ScritturaStreamDati {
+
+	public static void main(String[] args) {
+		
+		String path = "file.txt";
+		String testo = "Pino dei Palazzi e tutti sono pazzi!";
+		
+		
+
+	}
+
+}

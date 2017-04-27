@@ -1,0 +1,30 @@
+package filetesto;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+
+public class ScritturaStreamDati {
+
+	public static void main(String[] args) {
+		
+		String path = "file.txt";
+		String testo = "Pino dei Palazzi e tutti sono pazzi!";
+		
+		//accesso alla risorsa
+		FileOutputStream fos = null;
+		PrintWriter pw = null;
+		
+		try {
+			fos = new FileOutputStream(path);
+			pw = new PrintWriter(fos);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}

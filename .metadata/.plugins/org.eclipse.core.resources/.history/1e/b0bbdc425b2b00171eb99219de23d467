@@ -1,0 +1,18 @@
+package filetesto;
+
+import java.io.FileInputStream;
+
+public class LetturaStreamDati {
+
+	public static void main(String[] args) {
+		
+		String path = "file.txt";
+		//String testo = null; così non è inizializzata la stringa vuota
+		String testo = "";
+		
+		FileInputStream fis = null;
+		Scanner sc = null;
+
+	}
+
+}

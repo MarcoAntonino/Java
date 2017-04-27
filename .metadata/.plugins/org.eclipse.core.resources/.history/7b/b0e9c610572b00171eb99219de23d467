@@ -1,0 +1,25 @@
+package filetesto;
+
+import java.io.FileWriter;
+
+public class ScriviFileTesto {
+
+	public static void main(String[] args) {
+		// Scrittura su file di testo
+		
+		String path = "file.txt";
+		String testo = "Pino dei Palazzi è stato qui!";
+		
+		/*
+		 * Per lavorare in una risorsa, bisogna decidere in che modalità lavorarci
+		 * 1. Lettura
+		 * 2. Scrittura
+		 * 3. Append(aggiungi in coda)
+		 */
+		
+		FileWriter fw = null;
+		fw = new FileWriter(path);
+
+	}
+
+}

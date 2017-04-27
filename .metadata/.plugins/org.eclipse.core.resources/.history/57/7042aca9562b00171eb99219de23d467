@@ -1,0 +1,12 @@
+package filetesto;
+
+public class ScriviFileTesto {
+
+	public static void main(String[] args) {
+		// Scrittura su file di testo
+		
+		
+
+	}
+
+}

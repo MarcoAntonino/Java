@@ -1,0 +1,27 @@
+package fileoggetto;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.ObjectInputStream;
+
+public class LeggiFileOggetto {
+
+	public static void main(String[] args) {
+		
+		String path = "dati.dat";
+		Persona p = null;
+		
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(path);
+			ois 0 new ObjectInputStream(fis);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
