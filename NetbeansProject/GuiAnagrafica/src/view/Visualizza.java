@@ -31,6 +31,7 @@ public class Visualizza extends javax.swing.JFrame {
         txtVisualizza = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Visualizza");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Visualizza");

@@ -30,10 +30,11 @@ public class FinestraAnag extends javax.swing.JFrame {
         lblTitolo = new javax.swing.JLabel();
         btnNuovo = new javax.swing.JButton();
         btnVisualizza = new javax.swing.JButton();
-        btnRicerca = new javax.swing.JButton();
+        btnAggiorna = new javax.swing.JButton();
         btnElimina = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Anagrafica");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Anagrafica");
@@ -47,7 +48,12 @@ public class FinestraAnag extends javax.swing.JFrame {
 
         btnVisualizza.setText("Visualizza");
 
-        btnRicerca.setText("Ricerca");
+        btnAggiorna.setText("Aggiorna");
+        btnAggiorna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAggiornaActionPerformed(evt);
+            }
+        });
 
         btnElimina.setText("Elimina");
 
@@ -65,8 +71,8 @@ public class FinestraAnag extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnVisualizza)
                 .addGap(18, 18, 18)
-                .addComponent(btnRicerca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(btnAggiorna)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(btnElimina)
                 .addContainerGap())
         );
@@ -79,7 +85,7 @@ public class FinestraAnag extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuovo)
                     .addComponent(btnVisualizza)
-                    .addComponent(btnRicerca)
+                    .addComponent(btnAggiorna)
                     .addComponent(btnElimina))
                 .addContainerGap(221, Short.MAX_VALUE))
         );
@@ -90,6 +96,10 @@ public class FinestraAnag extends javax.swing.JFrame {
     private void btnNuovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuovoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuovoActionPerformed
+
+    private void btnAggiornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiornaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAggiornaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,9 +137,9 @@ public class FinestraAnag extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAggiorna;
     private javax.swing.JButton btnElimina;
     private javax.swing.JButton btnNuovo;
-    private javax.swing.JButton btnRicerca;
     private javax.swing.JButton btnVisualizza;
     private javax.swing.JLabel lblTitolo;
     // End of variables declaration//GEN-END:variables

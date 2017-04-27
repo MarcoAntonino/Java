@@ -27,7 +27,7 @@ public class Nuovo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btnGSesso = new javax.swing.ButtonGroup();
         lblTitolo = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -44,6 +44,7 @@ public class Nuovo extends javax.swing.JFrame {
         btnInserisci = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nuovo");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Inserisci i Dati");
@@ -82,7 +83,7 @@ public class Nuovo extends javax.swing.JFrame {
 
         lblSesso.setText("Sesso");
 
-        buttonGroup1.add(rbtnM);
+        btnGSesso.add(rbtnM);
         rbtnM.setText("M");
         rbtnM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,10 +91,10 @@ public class Nuovo extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(rbtnF);
+        btnGSesso.add(rbtnF);
         rbtnF.setText("F");
 
-        buttonGroup1.add(rbtnA);
+        btnGSesso.add(rbtnA);
         rbtnA.setText("Altro");
 
         btnInserisci.setText("Inserisci");
@@ -237,8 +238,8 @@ public class Nuovo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnGSesso;
     private javax.swing.JButton btnInserisci;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel lblDataNascita;
     private javax.swing.JLabel lblLuogoNascita;
     private javax.swing.JLabel lblNome;
