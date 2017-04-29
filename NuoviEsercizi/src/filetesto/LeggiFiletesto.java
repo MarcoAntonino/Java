@@ -10,18 +10,18 @@ public class LeggiFiletesto {
 	public static void main(String[] args) {
 		// Lettura da file di testo
 		
-		String path ="file.txt";
+		String nomeFile ="file.txt";
 		String testo = "";
 		
 		FileReader fr = null; //se il file non esiste, NON lo crea. Perchè è un reader
-		BufferedReader br = null;
+		BufferedReader inputStream = null;
 		
 		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
+			fr = new FileReader(nomeFile);
+			inputStream = new BufferedReader(fr);
 			
-			testo = br.readLine();
-			br.close();
+			testo = inputStream.readLine();
+			inputStream.close();
 			fr.close();
 			
 		} catch (FileNotFoundException e) {

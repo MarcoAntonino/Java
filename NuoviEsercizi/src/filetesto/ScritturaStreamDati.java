@@ -9,7 +9,7 @@ public class ScritturaStreamDati {
 
 	public static void main(String[] args) {
 		
-		String path = "file.txt";
+		String nomeFile = "file.txt";
 		String testo = "Pino dei Palazzi e tutti sono pazzi!";
 		
 		//accesso alla risorsa
@@ -22,7 +22,7 @@ public class ScritturaStreamDati {
 		 */
 		
 		try {
-			fos = new FileOutputStream(path);
+			fos = new FileOutputStream(nomeFile);
 			pw = new PrintWriter(fos);
 			
 			pw.write(testo);

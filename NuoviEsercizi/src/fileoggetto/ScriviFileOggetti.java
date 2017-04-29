@@ -11,7 +11,7 @@ public class ScriviFileOggetti  {
 	public static void main(String[] args) {
 		// lavoriamo con gli oggetti
 		
-		String path = "dati.dat";
+		String nomeFile = "dati.dat";
 		
 		Persona p = new Persona();
 		p.setNome("Pino");
@@ -25,7 +25,7 @@ public class ScriviFileOggetti  {
 		ObjectOutputStream oos = null;
 		
 		try {
-			fos = new FileOutputStream(path);
+			fos = new FileOutputStream(nomeFile);
 			oos = new ObjectOutputStream(fos);
 			
 			oos.writeObject(p);
