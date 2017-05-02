@@ -16,7 +16,7 @@ public class ScriviFileOggetti {
 		ArrayList<Persona> lista = new ArrayList<Persona>();
 		
 		Persona p = new Persona();
-		p.setNome("Pino");
+		p.setNome("Gino");
 		p.setCognome("Dellillo");
 		p.setDataNascita(new GregorianCalendar(1993,4,25));
 		p.setLuogoNascita("Moncalieri");
@@ -30,7 +30,6 @@ public class ScriviFileOggetti {
 		try {
 			fos = new FileOutputStream(nomeFile);
 			oos = new ObjectOutputStream(fos);
-			
 			oos.writeObject(lista);
 			oos.flush();
 			oos.close();

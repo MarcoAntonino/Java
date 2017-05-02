@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import model.MyLibrary;
@@ -203,17 +204,21 @@ public class Nuovo extends javax.swing.JFrame {
 
     private void btnInserisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserisciActionPerformed
                           
-        if(read(fileName)==null)
-        {
-            create(fileName, list);
-        }
+        String nome = txtNome.getText();
+        String cognome = txtCognome.getText();
+        
+        Persona p = new Persona (nome,cognome);      
+        
+        if(new File(fileName).isFile())     
+            MyLibrary.aggiungi(fileName, p);
         else
         {
-            MyLibrary.aggiungi(fileName, currentPersona);
+            list.add(p);
+            create(fileName, list);
         }
         
-        String nome = txtNome.getText();
-            String cognome = txtCognome.getText();
+        
+        
                     
     }//GEN-LAST:event_btnInserisciActionPerformed
 

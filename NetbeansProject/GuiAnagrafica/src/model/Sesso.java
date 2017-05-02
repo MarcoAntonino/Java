@@ -1,6 +1,6 @@
 package model;
 
-public enum Sesso {
+public enum Sesso  {
 	MASCHIO,FEMMINA, ALTRO
 
 }

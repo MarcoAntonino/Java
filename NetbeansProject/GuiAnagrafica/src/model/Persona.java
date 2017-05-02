@@ -7,7 +7,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Persona implements Serializable{ //essendo oggetti ho bisogno di serializzare i dati
-	//attributi
+
+    	private static final long serialVersionUID = 1L;
+
+
+//attributi
 	private String nome;
 	private String cognome;
 	private GregorianCalendar dataNascita;

@@ -36,7 +36,7 @@ public class MyLibrary {
             fos = new FileOutputStream(newFileName);
             oos = new ObjectOutputStream(fos);
             
-            oos.writeObject(oos);            
+            oos.writeObject(newArrayList);            
             oos.flush();
             fos.close();
             oos.close();
@@ -51,7 +51,7 @@ public class MyLibrary {
     
     public static ArrayList<Persona> read(String fileName) {
 		
-		ArrayList<Persona> list = null;
+		ArrayList<Persona> list = new ArrayList<Persona>();
 		
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;

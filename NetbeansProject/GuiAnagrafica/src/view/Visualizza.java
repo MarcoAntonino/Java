@@ -5,17 +5,30 @@
  */
 package view;
 
+import java.util.ArrayList;
+import static model.MyLibrary.read;
+import model.Persona;
+
 /**
  *
  * @author antoninom
  */
 public class Visualizza extends javax.swing.JFrame {
 
+    String fileName = "data.dat";
+    
     /**
      * Creates new form Visualizza
      */
     public Visualizza() {
         initComponents();
+        ArrayList<Persona> list = read(fileName);
+        
+        for(Persona p:list)
+        {
+            txtVisualizza.setText(p.toString());
+        }
+        
     }
 
     /**
