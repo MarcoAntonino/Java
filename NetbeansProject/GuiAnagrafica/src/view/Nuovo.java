@@ -7,6 +7,7 @@ package view;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import model.MyLibrary;
 import static model.MyLibrary.create;
 import static model.MyLibrary.read;
 import model.Persona;
@@ -208,7 +209,7 @@ public class Nuovo extends javax.swing.JFrame {
         }
         else
         {
-           
+            MyLibrary.aggiungi(fileName, currentPersona);
         }
         
         String nome = txtNome.getText();

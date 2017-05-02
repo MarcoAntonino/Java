@@ -93,7 +93,7 @@ public class MyLibrary {
      * @param currentFileName
      * @param currentPersona
      */
-    public static void append(String currentFileName, Persona currentPersona){
+    public static void aggiungi(String currentFileName, Persona currentPersona){
         
         ArrayList<Persona> list = read(currentFileName);
         list.add(currentPersona);
