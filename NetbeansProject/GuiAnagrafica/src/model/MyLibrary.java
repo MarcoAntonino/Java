@@ -7,9 +7,14 @@ package model;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,6 +25,39 @@ public class MyLibrary {
     /*
     Libreria di utility
     */
+    
+    public abstract void checkFormat();;
+    
+    public static void create(String newName, String newSecondName, 
+            GregorianCalendar newBirthDate, String newBirthCity, enumeration.Sesso newSex){
+        String fileName = "anagrafica.dat";
+        
+        
+        Persona p = new Persona();
+		p.setNome("Pino");
+		p.setCognome("Dellillo");
+		p.setDataNascita(new GregorianCalendar(1993,4,25));
+		p.setLuogoNascita("Moncalieri");
+		p.setSex(Sesso.MASCHIO);
+        
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        
+        try {
+            fos = new FileOutputStream(fileName);
+            oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(lista.add(p));            
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
     
     public static ArrayList<Persona> leggi() {
 		
@@ -33,9 +71,9 @@ public class MyLibrary {
 			fis = new FileInputStream(path);
 			ois = new ObjectInputStream(fis);
 			
-			Object obj;
+			Object obj = ois.readObject();
 			if(obj instanceof Persona)
-				=(Persona)obj; 
+				lista=(ArrayList)obj; 
 			
 			ois.close();
 			fis.close();
@@ -49,10 +87,17 @@ public class MyLibrary {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}finally{
+                    if(fis!=null){
+                        fis=null;
+                    }
+                    if(ois!=null){
+                        ois=null;
+                    }
+                }
+	    
+                return lista;
 		
-		if(p!=null)
-			System.out.println(p);
 
 	}
     

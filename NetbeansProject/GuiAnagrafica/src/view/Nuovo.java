@@ -5,17 +5,34 @@
  */
 package view;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import static model.MyLibrary.create;
+import model.Persona;
+
 /**
  *
  * @author antoninom
  */
 public class Nuovo extends javax.swing.JFrame {
 
+    ArrayList<Persona> lista = new ArrayList();
+    
+        
     /**
      * Creates new form Nuovo
      */
     public Nuovo() {
         initComponents();
+    }
+    
+    
+    
+    public GregorianCalendar trasformaData(String data){
+        
+        data.
+        
+        return ;
     }
 
     /**
@@ -50,12 +67,6 @@ public class Nuovo extends javax.swing.JFrame {
         lblTitolo.setText("Inserisci i Dati");
 
         lblNome.setText("Nome");
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
 
         lblNome1.setText("Cognome");
 
@@ -178,10 +189,6 @@ public class Nuovo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
     private void txtCognomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCognomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCognomeActionPerformed
@@ -199,7 +206,10 @@ public class Nuovo extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnMActionPerformed
 
     private void btnInserisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserisciActionPerformed
-        // TODO add your handling code here:
+                          
+            String nome = txtNome.getText();
+            String cognome = txtCognome.getText();
+                    
     }//GEN-LAST:event_btnInserisciActionPerformed
 
     /**
