@@ -1,5 +1,5 @@
 package model;
-import enumeration.Sesso;
+import model.Sesso;
 import java.io.Serializable;
 
 import java.text.SimpleDateFormat;

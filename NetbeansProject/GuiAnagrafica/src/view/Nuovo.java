@@ -8,6 +8,7 @@ package view;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import static model.MyLibrary.create;
+import static model.MyLibrary.read;
 import model.Persona;
 
 /**
@@ -16,9 +17,9 @@ import model.Persona;
  */
 public class Nuovo extends javax.swing.JFrame {
 
-    ArrayList<Persona> lista = new ArrayList();
-    
-        
+     String fileName = "data.dat";
+     ArrayList<Persona> list = new ArrayList<Persona>();
+     
     /**
      * Creates new form Nuovo
      */
@@ -28,13 +29,7 @@ public class Nuovo extends javax.swing.JFrame {
     
     
     
-    public GregorianCalendar trasformaData(String data){
-        
-        data.
-        
-        return ;
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,7 +202,16 @@ public class Nuovo extends javax.swing.JFrame {
 
     private void btnInserisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserisciActionPerformed
                           
-            String nome = txtNome.getText();
+        if(read(fileName)==null)
+        {
+            create(fileName, list);
+        }
+        else
+        {
+           
+        }
+        
+        String nome = txtNome.getText();
             String cognome = txtCognome.getText();
                     
     }//GEN-LAST:event_btnInserisciActionPerformed

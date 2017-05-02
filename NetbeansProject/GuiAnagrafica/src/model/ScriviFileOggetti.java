@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.GregorianCalendar;
 
+
 public class ScriviFileOggetti  {
 
 	public static void main(String[] args) {

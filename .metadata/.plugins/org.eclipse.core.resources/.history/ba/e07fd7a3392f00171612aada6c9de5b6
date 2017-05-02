@@ -25,18 +25,11 @@ public class ScriviFileOggetti {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		
-		lista.add(p);
-		
 		try {
 			fos = new FileOutputStream(nomeFile);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(lista);
-			oos.flush();
-			oos.close();
-			fos.close();
-			
-			System.out.println("Dati salvati con successo!");
-
+			oos.writeObject(lista.add(p));
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

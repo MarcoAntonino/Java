@@ -26,58 +26,45 @@ public class MyLibrary {
     Libreria di utility
     */
     
-    public abstract void checkFormat();;
     
-    public static void create(String newName, String newSecondName, 
-            GregorianCalendar newBirthDate, String newBirthCity, enumeration.Sesso newSex){
-        String fileName = "anagrafica.dat";
+    public static void create(String newFileName, ArrayList<Persona> newArrayList){
         
-        
-        Persona p = new Persona();
-		p.setNome("Pino");
-		p.setCognome("Dellillo");
-		p.setDataNascita(new GregorianCalendar(1993,4,25));
-		p.setLuogoNascita("Moncalieri");
-		p.setSex(Sesso.MASCHIO);
-        
-        FileOutputStream fos = null;
-        ObjectOutputStream oos = null;
+        FileOutputStream fos;
+        ObjectOutputStream oos;
         
         try {
-            fos = new FileOutputStream(fileName);
+            fos = new FileOutputStream(newFileName);
             oos = new ObjectOutputStream(fos);
             
-            oos.writeObject(lista.add(p));            
-            
+            oos.writeObject(oos);            
+            oos.flush();
+            fos.close();
+            oos.close();
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
     
     
-    public static ArrayList<Persona> leggi() {
+    public static ArrayList<Persona> read(String fileName) {
 		
-		String path = "anagrafica.dat";
-		ArrayList<Persona> lista = null;
+		ArrayList<Persona> list = null;
 		
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		
 		try {
-			fis = new FileInputStream(path);
+			fis = new FileInputStream(fileName);
 			ois = new ObjectInputStream(fis);
 			
 			Object obj = ois.readObject();
-			if(obj instanceof Persona)
-				lista=(ArrayList)obj; 
+			if(obj instanceof ArrayList)
+				list=(ArrayList)obj; 
 			
-			ois.close();
-			fis.close();
-			
+						
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,9 +83,68 @@ public class MyLibrary {
                     }
                 }
 	    
-                return lista;
+                return list;
 		
 
-	}
+    }
+    
+    /**
+     *
+     * @param currentFileName
+     * @param currentPersona
+     */
+    public static void append(String currentFileName, Persona currentPersona){
+        
+        ArrayList<Persona> list = read(currentFileName);
+        list.add(currentPersona);
+        create(currentFileName, list);        
+    }
+    
+    public static Persona searchForPosition(int index, String currentFileName){
+        
+        ArrayList<Persona> list = read(currentFileName);
+        Persona personOfInterest;
+        personOfInterest = list.get(index);
+        
+        return personOfInterest;        
+    }
+    
+    public static int searchForIstance(String currentFileNAme, 
+            ArrayList<Persona> currentList, Persona personOfInterest){
+        
+        int index = -1;
+        
+        try{
+            index = currentList.indexOf(personOfInterest);
+	}catch(Exception e){
+            e.printStackTrace();
+        }
+                
+        return index;
+    }
+    
+    public static Persona searchForName(String currentFileName, String name){
+        
+        ArrayList<Persona> list = read(currentFileName);
+        Persona personOfInterest = null;
+        
+        for(Persona p:list)
+        {
+            if(name==p.getCognome() || name ==p.getNome())
+                personOfInterest=p;
+                        
+        }
+        
+        return personOfInterest;
+        
+    }
+    
+    public static Persona searchForIndex(String currentFileName, int index){
+        
+         ArrayList<Persona> list = read(currentFileName);
+         return list.get(index);
+        
+    }
+    
     
 }

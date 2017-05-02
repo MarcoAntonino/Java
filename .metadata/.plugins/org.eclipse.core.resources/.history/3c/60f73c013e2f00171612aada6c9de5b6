@@ -25,12 +25,11 @@ public class ScriviFileOggetti {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		
-		lista.add(p);
-		
 		try {
 			fos = new FileOutputStream(nomeFile);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(lista);
+			oos.writeObject(lista.add(p));
 			oos.flush();
 			oos.close();
 			fos.close();
