@@ -209,6 +209,13 @@ public class Nuovo extends javax.swing.JFrame {
         
         Persona p = new Persona (nome,cognome);      
         
+        try{
+            MyLibrary.aggiungi(fileName, p);
+        }catch (FileNotFoundException e){
+            list.add(p);
+            create(fileName, list);
+        }
+        /*
         if(new File(fileName).isFile())     
             MyLibrary.aggiungi(fileName, p);
         else
@@ -216,7 +223,7 @@ public class Nuovo extends javax.swing.JFrame {
             list.add(p);
             create(fileName, list);
         }
-        
+        */
         
         
                     
