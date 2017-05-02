@@ -14,7 +14,7 @@ public class ScriviFileOggetti  {
 		String nomeFile = "dati.dat";
 		
 		Persona p = new Persona();
-		p.setNome("Pino");
+		p.setNome("Gino");
 		p.setCognome("Dellillo");
 		p.setDataNascita(new GregorianCalendar(1993,4,25));
 		p.setLuogoNascita("Moncalieri");
