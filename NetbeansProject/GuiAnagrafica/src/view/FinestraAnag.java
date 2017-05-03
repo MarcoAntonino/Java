@@ -5,6 +5,8 @@
  */
 package view;
 
+import java.awt.SecondaryLoop;
+
 /**
  *
  * @author antoninom
@@ -94,7 +96,8 @@ public class FinestraAnag extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNuovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuovoActionPerformed
-        // TODO add your handling code here:
+        Nuovo nuovo = new Nuovo();
+        nuovo.setVisible(true);
     }//GEN-LAST:event_btnNuovoActionPerformed
 
     private void btnAggiornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiornaActionPerformed

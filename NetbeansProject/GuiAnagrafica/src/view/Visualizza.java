@@ -24,10 +24,14 @@ public class Visualizza extends javax.swing.JFrame {
         initComponents();
         ArrayList<Persona> list = read(fileName);
         
-        for(Persona p:list)
+        StringBuilder sb = new StringBuilder();
+        for(Persona p : list)
         {
-            txtVisualizza.setText(p.toString());
+           sb.append(p.toString()+"\n"+"\n");
+           
+                      
         }
+        txtVisualizza.setText(sb.toString());
         
     }
 
@@ -41,7 +45,8 @@ public class Visualizza extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTitolo = new javax.swing.JLabel();
-        txtVisualizza = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtVisualizza = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Visualizza");
@@ -49,11 +54,9 @@ public class Visualizza extends javax.swing.JFrame {
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Visualizza");
 
-        txtVisualizza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVisualizzaActionPerformed(evt);
-            }
-        });
+        txtVisualizza.setColumns(20);
+        txtVisualizza.setRows(5);
+        jScrollPane1.setViewportView(txtVisualizza);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,7 +68,7 @@ public class Visualizza extends javax.swing.JFrame {
                 .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtVisualizza)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -74,16 +77,12 @@ public class Visualizza extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblTitolo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtVisualizza, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtVisualizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVisualizzaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVisualizzaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,7 +120,8 @@ public class Visualizza extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitolo;
-    private javax.swing.JTextField txtVisualizza;
+    private javax.swing.JTextArea txtVisualizza;
     // End of variables declaration//GEN-END:variables
 }

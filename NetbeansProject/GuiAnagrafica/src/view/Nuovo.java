@@ -6,12 +6,22 @@
 package view;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.MyLibrary;
 import static model.MyLibrary.create;
 import static model.MyLibrary.read;
 import model.Persona;
+import model.Sesso;
 
 /**
  *
@@ -48,7 +58,6 @@ public class Nuovo extends javax.swing.JFrame {
         lblNome1 = new javax.swing.JLabel();
         txtCognome = new javax.swing.JTextField();
         lblDataNascita = new javax.swing.JLabel();
-        txtDataNascita = new javax.swing.JTextField();
         lblLuogoNascita = new javax.swing.JLabel();
         txtLuogoNascita = new javax.swing.JTextField();
         lblSesso = new javax.swing.JLabel();
@@ -56,6 +65,8 @@ public class Nuovo extends javax.swing.JFrame {
         rbtnF = new javax.swing.JRadioButton();
         rbtnA = new javax.swing.JRadioButton();
         btnInserisci = new javax.swing.JButton();
+        txtDataNascita = new javax.swing.JTextField();
+        txtfDataNascita = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nuovo");
@@ -74,12 +85,6 @@ public class Nuovo extends javax.swing.JFrame {
         });
 
         lblDataNascita.setText("Data Nascita");
-
-        txtDataNascita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataNascitaActionPerformed(evt);
-            }
-        });
 
         lblLuogoNascita.setText("Luogo Nascita");
 
@@ -112,6 +117,9 @@ public class Nuovo extends javax.swing.JFrame {
             }
         });
 
+        txtfDataNascita.setColumns(8);
+        txtfDataNascita.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,21 +139,27 @@ public class Nuovo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCognome)
                             .addComponent(txtNome)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblDataNascita)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtDataNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLuogoNascita)
-                            .addComponent(lblSesso))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnM)
-                            .addComponent(txtLuogoNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rbtnF)
-                            .addComponent(rbtnA)
-                            .addComponent(btnInserisci))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblDataNascita)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtDataNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblLuogoNascita)
+                                    .addComponent(lblSesso))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(rbtnM)
+                                    .addComponent(txtLuogoNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rbtnA)
+                                    .addComponent(btnInserisci)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(rbtnF)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtfDataNascita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -175,12 +189,14 @@ public class Nuovo extends javax.swing.JFrame {
                     .addComponent(lblSesso)
                     .addComponent(rbtnM))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbtnF)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnF)
+                    .addComponent(txtfDataNascita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtnA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnInserisci)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -189,10 +205,6 @@ public class Nuovo extends javax.swing.JFrame {
     private void txtCognomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCognomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCognomeActionPerformed
-
-    private void txtDataNascitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascitaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataNascitaActionPerformed
 
     private void txtLuogoNascitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLuogoNascitaActionPerformed
         // TODO add your handling code here:
@@ -205,25 +217,45 @@ public class Nuovo extends javax.swing.JFrame {
     private void btnInserisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserisciActionPerformed
                           
         String nome = txtNome.getText();
-        String cognome = txtCognome.getText();
+        String cognome = txtCognome.getText();  
         
-        Persona p = new Persona (nome,cognome);      
+        String luogoNascita = txtLuogoNascita.getText();
         
-        try{
+        Persona p = new Persona (nome,cognome,null,luogoNascita,null);
+        
+        String dataNascita = txtDataNascita.getText();
+        
+        if(rbtnM.isSelected()){
+            p.setSex(Sesso.MASCHIO);            
+        }else if(rbtnF.isSelected()){
+            p.setSex(Sesso.FEMMINA);         
+        }else if(rbtnA.isSelected()){
+            p.setSex(Sesso.ALTRO);          
+        }        
+        
+        
+        File f = new File(fileName);
+        if (f.exists()){
+            
             MyLibrary.aggiungi(fileName, p);
-        }catch (FileNotFoundException e){
-            list.add(p);
-            create(fileName, list);
+            JOptionPane.showMessageDialog(null, "Dato salvato");
+            
         }
-        /*
-        if(new File(fileName).isFile())     
-            MyLibrary.aggiungi(fileName, p);
         else
-        {
-            list.add(p);
-            create(fileName, list);
+            try{
+                if(f.createNewFile())
+                {
+                    list.add(p);
+                    MyLibrary.create(fileName, list);
+                    JOptionPane.showMessageDialog(null, "dato salvato");
+
+                }
+                
+            } catch (IOException ex) {
+            Logger.getLogger(Nuovo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+        
+        
         
         
                     
@@ -280,5 +312,6 @@ public class Nuovo extends javax.swing.JFrame {
     private javax.swing.JTextField txtDataNascita;
     private javax.swing.JTextField txtLuogoNascita;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JFormattedTextField txtfDataNascita;
     // End of variables declaration//GEN-END:variables
 }

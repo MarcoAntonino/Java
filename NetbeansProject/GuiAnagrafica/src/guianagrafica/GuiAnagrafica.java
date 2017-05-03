@@ -5,6 +5,8 @@
  */
 package guianagrafica;
 
+import view.FinestraAnag;
+
 /**
  *
  * @author antoninom
@@ -15,7 +17,8 @@ public class GuiAnagrafica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FinestraAnag fa = new FinestraAnag();
+        fa.setVisible(true);
     }
     
 }

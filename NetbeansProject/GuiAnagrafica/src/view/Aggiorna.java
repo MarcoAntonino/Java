@@ -5,12 +5,29 @@
  */
 package view;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.MyLibrary;
+import model.Persona;
+import model.Sesso;
+
 /**
  *
  * @author antoninom
  */
 public class Aggiorna extends javax.swing.JFrame {
 
+        String fileName = "data.dat";
+        int cerca;
+        Persona p=null;
+        ArrayList<Persona> list = null;
+
+    
     /**
      * Creates new form Aggiorna
      */
@@ -60,6 +77,11 @@ public class Aggiorna extends javax.swing.JFrame {
         });
 
         btnCerca.setText("Cerca");
+        btnCerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCercaActionPerformed(evt);
+            }
+        });
 
         lblNome.setText("Nome");
 
@@ -230,8 +252,72 @@ public class Aggiorna extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnMActionPerformed
 
     private void btnSalvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaActionPerformed
-        // TODO add your handling code here:
+        
+        try{
+        int index = Integer.parseInt(txtCerca.getText());
+        Persona p = MyLibrary.searchForPosition(index, fileName);
+        p.setNome(txtNome.getText());
+        p.setCognome(txtCognome.getText());
+        
+        GregorianCalendar datadiNascita; 
+        SimpleDateFormat dataNascita = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = dataNascita.parse(txtDataNascita.getText());
+        datadiNascita = (GregorianCalendar) GregorianCalendar.getInstance();
+        datadiNascita.setTime(date);        
+        p.setDataNascita(datadiNascita);
+        
+        if(rbtnM.isSelected()){
+            p.setSex(Sesso.MASCHIO);            
+        }else if(rbtnF.isSelected()){
+            p.setSex(Sesso.FEMMINA);         
+        }else if(rbtnA.isSelected()){
+            p.setSex(Sesso.ALTRO);          
+        }
+        }catch(ParseException ex) {
+        Logger.getLogger(Aggiorna.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+        
     }//GEN-LAST:event_btnSalvaActionPerformed
+
+    private void btnCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCercaActionPerformed
+        
+        cerca = Integer.parseInt(txtCerca.getText());
+        
+        p=new Persona();
+        list=new ArrayList<Persona>();
+        list=MyLibrary.read(fileName);
+        for(Object o : list){
+            if(o instanceof Persona)
+            p=(Persona)o;
+        }        
+        
+        String nome = p.getNome();
+        String cognome = p.getCognome();
+        String luogoNascita = p.getLuogoNascita();
+        
+        
+        SimpleDateFormat dataNascita = new SimpleDateFormat("dd/MM/yyyy");
+        dataNascita.setCalendar(list.get(cerca).getDataNascita());
+        //String dataNascitaFormattata = dataNascita.format(p.getDataNascita().getTime());
+        
+               
+        txtNome.setText(list.get(cerca).getNome());
+        txtCognome.setText(list.get(cerca).getCognome());
+        txtLuogoNascita.setText(list.get(cerca).getLuogoNascita());
+       
+        
+        if (list.get(cerca).getSex()==Sesso.MASCHIO){
+            rbtnM.doClick();
+        }else if(list.get(cerca).getSex()==Sesso.FEMMINA){
+            rbtnF.doClick();
+        }else if(list.get(cerca).getSex()==Sesso.ALTRO){
+            rbtnA.doClick();
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnCercaActionPerformed
 
     /**
      * @param args the command line arguments

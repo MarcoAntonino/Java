@@ -109,7 +109,7 @@ public class MyLibrary {
         return personOfInterest;        
     }
     
-    public static int searchForIstance(String currentFileNAme, 
+    public static int searchForIstance(String currentFileName, 
             ArrayList<Persona> currentList, Persona personOfInterest){
         
         int index = -1;
