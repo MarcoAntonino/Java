@@ -21,7 +21,7 @@ import model.Sesso;
  *
  * @author antoninom
  */
-public class Aggiorna extends javax.swing.JFrame {
+public class Elimina extends javax.swing.JFrame {
 
         String fileName = "data.dat";
         int find;
@@ -32,7 +32,7 @@ public class Aggiorna extends javax.swing.JFrame {
     /**
      * Creates new form Aggiorna
      */
-    public Aggiorna() {
+    public Elimina() {
         initComponents();
     }
 
@@ -67,7 +67,7 @@ public class Aggiorna extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblTitolo.setText("Aggiorna persona");
+        lblTitolo.setText("Elimina persona");
 
         lblCerca.setText("Cerca per posizione");
 
@@ -132,7 +132,7 @@ public class Aggiorna extends javax.swing.JFrame {
         btnGSesso.add(rbtnA);
         rbtnA.setText("Altro");
 
-        btnSalva.setText("Salva");
+        btnSalva.setText("Elimina");
         btnSalva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvaActionPerformed(evt);
@@ -222,7 +222,7 @@ public class Aggiorna extends javax.swing.JFrame {
                 .addComponent(rbtnA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSalva)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -254,34 +254,8 @@ public class Aggiorna extends javax.swing.JFrame {
 
     private void btnSalvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaActionPerformed
         
-        try{
-        
-            list.get(find).setNome(txtNome.getText());
-            list.get(find).setCognome(txtCognome.getText());
-            list.get(find).setLuogoNascita(txtLuogoNascita.getText());        
-        
-            GregorianCalendar datadiNascita; 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = sdf.parse(txtDataNascita.getText());
-            datadiNascita = (GregorianCalendar) GregorianCalendar.getInstance();
-            datadiNascita.setTime(date);        
-            list.get(find).setDataNascita(datadiNascita);        
-
-        
-        
-            if(rbtnM.isSelected()){
-                list.get(find).setSex(Sesso.MASCHIO);            
-            }else if(rbtnF.isSelected()){
-                list.get(find).setSex(Sesso.FEMMINA);         
-             }else if(rbtnA.isSelected()){
-                list.get(find).setSex(Sesso.ALTRO);          
-            }
-            create(fileName,list);
-
-        }catch(ParseException ex) {
-        Logger.getLogger(Aggiorna.class.getName()).log(Level.SEVERE, null, ex);
-    }
-        
+        list.remove(find);
+        create(fileName, list);
 
         
         
@@ -337,20 +311,21 @@ public class Aggiorna extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Aggiorna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Elimina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Aggiorna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Elimina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Aggiorna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Elimina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aggiorna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Elimina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Aggiorna().setVisible(true);
+                new Elimina().setVisible(true);
             }
         });
     }

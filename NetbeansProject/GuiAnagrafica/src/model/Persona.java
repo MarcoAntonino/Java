@@ -93,6 +93,15 @@ public class Persona implements Serializable{ //essendo oggetti ho bisogno di se
 				e--;
 		return e;
 	}
+        
+        public String ottieniStringaData() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+		String dataNascitaStringa = sdf.format(dataNascita.getTime());
+		if(dataNascita!=null){
+			dataNascitaStringa = sdf.format(dataNascita.getTime());
+		}
+		return dataNascitaStringa;
+	}
 
 	@Override
 	public String toString() {
@@ -107,7 +116,7 @@ public class Persona implements Serializable{ //essendo oggetti ho bisogno di se
 		return ""
 				+ (nome != null ? "nome=" + nome : "") 
 				+ "\n"+ (cognome != null ? " cognome=" + cognome : "") 
-				+ "\n"+ (dataNascita != null ? " dataNascita=" + d : "")
+				+ "\n"+ (dataNascita != null ? " dataNascita=" + ottieniStringaData() : "")
 				+ "\n"+ (luogoNascita != null ? " luogoNascita="	+ luogoNascita : "") 
 				+ "\n"+ (dataNascita != null ? " eta=" + eta() : "")
 				+ "\n"+ (sex != null ? " sesso=" + sex : "");
