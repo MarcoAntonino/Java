@@ -48,7 +48,7 @@ public class Visualizza extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtVisualizza = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Visualizza");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N

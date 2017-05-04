@@ -68,7 +68,7 @@ public class Nuovo extends javax.swing.JFrame {
         txtDataNascita = new javax.swing.JTextField();
         txtfDataNascita = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nuovo");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N

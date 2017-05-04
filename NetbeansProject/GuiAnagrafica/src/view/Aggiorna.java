@@ -64,7 +64,7 @@ public class Aggiorna extends javax.swing.JFrame {
         rbtnA = new javax.swing.JRadioButton();
         btnSalva = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Aggiorna persona");
@@ -222,7 +222,7 @@ public class Aggiorna extends javax.swing.JFrame {
                 .addComponent(rbtnA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSalva)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

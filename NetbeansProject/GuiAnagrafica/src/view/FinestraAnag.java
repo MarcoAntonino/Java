@@ -35,7 +35,7 @@ public class FinestraAnag extends javax.swing.JFrame {
         btnAggiorna = new javax.swing.JButton();
         btnElimina = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Anagrafica");
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -49,6 +49,11 @@ public class FinestraAnag extends javax.swing.JFrame {
         });
 
         btnVisualizza.setText("Visualizza");
+        btnVisualizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisualizzaActionPerformed(evt);
+            }
+        });
 
         btnAggiorna.setText("Aggiorna");
         btnAggiorna.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +63,11 @@ public class FinestraAnag extends javax.swing.JFrame {
         });
 
         btnElimina.setText("Elimina");
+        btnElimina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,8 +111,19 @@ public class FinestraAnag extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuovoActionPerformed
 
     private void btnAggiornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiornaActionPerformed
-        // TODO add your handling code here:
+        Aggiorna aggiorna = new Aggiorna();
+        aggiorna.setVisible(true);
     }//GEN-LAST:event_btnAggiornaActionPerformed
+
+    private void btnVisualizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizzaActionPerformed
+        Visualizza visualizza = new Visualizza();
+        visualizza.setVisible(true);
+    }//GEN-LAST:event_btnVisualizzaActionPerformed
+
+    private void btnEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaActionPerformed
+        Elimina elimina = new Elimina();
+        elimina.setVisible(true);
+    }//GEN-LAST:event_btnEliminaActionPerformed
 
     /**
      * @param args the command line arguments

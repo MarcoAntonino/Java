@@ -64,7 +64,7 @@ public class Elimina extends javax.swing.JFrame {
         rbtnA = new javax.swing.JRadioButton();
         btnSalva = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitolo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblTitolo.setText("Elimina persona");
