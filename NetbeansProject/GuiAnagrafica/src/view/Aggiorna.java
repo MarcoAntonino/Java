@@ -13,6 +13,7 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.MyLibrary;
+import static model.MyLibrary.create;
 import model.Persona;
 import model.Sesso;
 
@@ -23,7 +24,7 @@ import model.Sesso;
 public class Aggiorna extends javax.swing.JFrame {
 
         String fileName = "data.dat";
-        int cerca;
+        int find;
         Persona p=null;
         ArrayList<Persona> list = null;
 
@@ -254,35 +255,41 @@ public class Aggiorna extends javax.swing.JFrame {
     private void btnSalvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaActionPerformed
         
         try{
-        int index = Integer.parseInt(txtCerca.getText());
-        Persona p = MyLibrary.searchForPosition(index, fileName);
-        p.setNome(txtNome.getText());
-        p.setCognome(txtCognome.getText());
         
-        GregorianCalendar datadiNascita; 
-        SimpleDateFormat dataNascita = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = dataNascita.parse(txtDataNascita.getText());
-        datadiNascita = (GregorianCalendar) GregorianCalendar.getInstance();
-        datadiNascita.setTime(date);        
-        p.setDataNascita(datadiNascita);
+            list.get(find).setNome(txtNome.getText());
+            list.get(find).setCognome(txtCognome.getText());
+            list.get(find).setLuogoNascita(txtLuogoNascita.getText());        
         
-        if(rbtnM.isSelected()){
-            p.setSex(Sesso.MASCHIO);            
-        }else if(rbtnF.isSelected()){
-            p.setSex(Sesso.FEMMINA);         
-        }else if(rbtnA.isSelected()){
-            p.setSex(Sesso.ALTRO);          
-        }
+            GregorianCalendar datadiNascita; 
+            SimpleDateFormat dataNascita = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = dataNascita.parse(txtDataNascita.getText());
+            datadiNascita = (GregorianCalendar) GregorianCalendar.getInstance();
+            datadiNascita.setTime(date);        
+            list.get(find).setDataNascita(datadiNascita);        
+
+        
+        
+            if(rbtnM.isSelected()){
+                list.get(find).setSex(Sesso.MASCHIO);            
+            }else if(rbtnF.isSelected()){
+                list.get(find).setSex(Sesso.FEMMINA);         
+             }else if(rbtnA.isSelected()){
+                list.get(find).setSex(Sesso.ALTRO);          
+            }
+            create(fileName,list);
+
         }catch(ParseException ex) {
         Logger.getLogger(Aggiorna.class.getName()).log(Level.SEVERE, null, ex);
     }
+        
+
         
         
     }//GEN-LAST:event_btnSalvaActionPerformed
 
     private void btnCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCercaActionPerformed
         
-        cerca = Integer.parseInt(txtCerca.getText());
+        find = Integer.parseInt(txtCerca.getText());
         
         p=new Persona();
         list=new ArrayList<Persona>();
@@ -298,22 +305,24 @@ public class Aggiorna extends javax.swing.JFrame {
         
         
         SimpleDateFormat dataNascita = new SimpleDateFormat("dd/MM/yyyy");
-        dataNascita.setCalendar(list.get(cerca).getDataNascita());
+        dataNascita.setCalendar(list.get(find).getDataNascita());
         //String dataNascitaFormattata = dataNascita.format(p.getDataNascita().getTime());
         
                
-        txtNome.setText(list.get(cerca).getNome());
-        txtCognome.setText(list.get(cerca).getCognome());
-        txtLuogoNascita.setText(list.get(cerca).getLuogoNascita());
+        txtNome.setText(list.get(find).getNome());
+        txtCognome.setText(list.get(find).getCognome());
+        txtLuogoNascita.setText(list.get(find).getLuogoNascita());
        
         
-        if (list.get(cerca).getSex()==Sesso.MASCHIO){
+        if (list.get(find).getSex()==Sesso.MASCHIO){
             rbtnM.doClick();
-        }else if(list.get(cerca).getSex()==Sesso.FEMMINA){
+        }else if(list.get(find).getSex()==Sesso.FEMMINA){
             rbtnF.doClick();
-        }else if(list.get(cerca).getSex()==Sesso.ALTRO){
+        }else if(list.get(find).getSex()==Sesso.ALTRO){
             rbtnA.doClick();
         }
+        
+        
         
         
         
