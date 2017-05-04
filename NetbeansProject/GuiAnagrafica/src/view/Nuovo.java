@@ -216,44 +216,53 @@ public class Nuovo extends javax.swing.JFrame {
 
     private void btnInserisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserisciActionPerformed
                           
-        String nome = txtNome.getText();
-        String cognome = txtCognome.getText();  
-        
-        String luogoNascita = txtLuogoNascita.getText();
-        
-        Persona p = new Persona (nome,cognome,null,luogoNascita,null);
-        
-        String dataNascita = txtDataNascita.getText();
-        
-        if(rbtnM.isSelected()){
-            p.setSex(Sesso.MASCHIO);            
-        }else if(rbtnF.isSelected()){
-            p.setSex(Sesso.FEMMINA);         
-        }else if(rbtnA.isSelected()){
-            p.setSex(Sesso.ALTRO);          
-        }        
-        
-        
-        File f = new File(fileName);
-        if (f.exists()){
-            
-            MyLibrary.aggiungi(fileName, p);
-            JOptionPane.showMessageDialog(null, "Dato salvato");
-            
-        }
-        else
-            try{
-                if(f.createNewFile())
-                {
-                    list.add(p);
-                    MyLibrary.create(fileName, list);
-                    JOptionPane.showMessageDialog(null, "dato salvato");
-
-                }
-                
-            } catch (IOException ex) {
-            Logger.getLogger(Nuovo.class.getName()).log(Level.SEVERE, null, ex);
-        }
+         try {
+             String nome = txtNome.getText();
+             String cognome = txtCognome.getText();
+             
+             String luogoNascita = txtLuogoNascita.getText();
+             
+             Persona p = new Persona (nome,cognome,null,luogoNascita,null);
+             
+             GregorianCalendar dataNascita;
+             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+             Date date = sdf.parse(txtDataNascita.getText());
+             dataNascita = (GregorianCalendar) GregorianCalendar.getInstance();
+             dataNascita.setTime(date);
+             p.setDataNascita(dataNascita);            
+             
+             
+             if(rbtnM.isSelected()){
+                 p.setSex(Sesso.MASCHIO);
+             }else if(rbtnF.isSelected()){
+                 p.setSex(Sesso.FEMMINA);
+             }else if(rbtnA.isSelected()){
+                 p.setSex(Sesso.ALTRO);
+             }
+             
+             
+             File f = new File(fileName);
+             if (f.exists()){
+                 
+                 MyLibrary.aggiungi(fileName, p);
+                 JOptionPane.showMessageDialog(null, "Dato salvato");
+                 
+             }
+             else
+                 try{
+                     if(f.createNewFile())
+                     {
+                         list.add(p);
+                         MyLibrary.create(fileName, list);
+                         JOptionPane.showMessageDialog(null, "dato salvato");
+                         
+                     }
+                     
+                 } catch (IOException ex) {
+                     Logger.getLogger(Nuovo.class.getName()).log(Level.SEVERE, null, ex);
+                 }} catch (ParseException ex) {
+             Logger.getLogger(Nuovo.class.getName()).log(Level.SEVERE, null, ex);
+         }
         
         
         
