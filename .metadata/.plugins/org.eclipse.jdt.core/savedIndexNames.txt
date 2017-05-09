@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.130+D:\Utenti\Nuova cartella\ITS\Java\.metadata\.plugins\org.eclipse.jdt.core
 150880253.index
 871419216.index
@@ -23,3 +24,61 @@ INDEX VERSION 1.130+D:\Utenti\Nuova cartella\ITS\Java\.metadata\.plugins\org.ecl
 4052747752.index
 2122432885.index
 2537127582.index
+=======
+<<<<<<< HEAD
+INDEX VERSION 1.130+C:\Users\antoninom\Documents\Java\Java\.metadata\.plugins\org.eclipse.jdt.core
+4122227026.index
+2250812846.index
+3792966807.index
+3322898943.index
+4157321706.index
+=======
+INDEX VERSION 1.130+C:\Users\NewMarco\Documents\ITS ICT\Java\.metadata\.plugins\org.eclipse.jdt.core
+140672942.index
+2593287543.index
+2470519452.index
+2272273464.index
+194259052.index
+3620471903.index
+882706761.index
+1484906476.index
+559129880.index
+4265864773.index
+648612256.index
+1204385438.index
+1477788888.index
+148409970.index
+3666609613.index
+848469205.index
+922380862.index
+1689259093.index
+>>>>>>> 31bf1df2084a640dec4ada9d81147b2e6e74bca6
+125903853.index
+1053258112.index
+3698447926.index
+628019425.index
+871419216.index
+<<<<<<< HEAD
+1053258112.index
+3193238650.index
+1111690661.index
+3537799689.index
+1881185154.index
+882706761.index
+4217414876.index
+220789872.index
+1392172246.index
+140672942.index
+1631616599.index
+1204385438.index
+1527409904.index
+2427601795.index
+69564303.index
+2593287543.index
+909861168.index
+245730303.index
+=======
+3141958188.index
+2709225165.index
+>>>>>>> 31bf1df2084a640dec4ada9d81147b2e6e74bca6
+>>>>>>> 3104504b144eab8cd771f3dff6902a9e2885270c
