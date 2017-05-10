@@ -52,13 +52,11 @@ public class MyLibrary {
     }
     
     public static void createTxt(String newFileName, Auto newAuto){
-        
-        
+                
         String testo = newAuto.toString();
         
         FileWriter fw = null; //seleziona la risorsa
         BufferedWriter bw = null; //gestisce, scrive la risorsa
-        
         try {
             fw = new FileWriter(newFileName);
             bw = new BufferedWriter(fw);
@@ -69,13 +67,14 @@ public class MyLibrary {
         } catch (IOException ex) {
             Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
-        
-        
     }
+    
+    public static void aggiungiTxt(String currentFileName, Auto currentAuto){
+        
+        ArrayList<Auto> list = read(currentFileName);
+    }
+    
+    
     
     
     public static ArrayList<Auto> read(String fileName) {
@@ -120,52 +119,34 @@ public class MyLibrary {
     /**
      *
      * @param currentFileName
-     * @param currentPersona
+     * @param currentAuto
      */
-    public static void aggiungi(String currentFileName, Auto currentPersona){
+    public static void aggiungi(String currentFileName, Auto currentAuto){
         
         ArrayList<Auto> list = read(currentFileName);
-        list.add(currentPersona);
+        list.add(currentAuto);
         create(currentFileName, list);        
     }
     
-       
-    public static int search(ArrayList<Auto> currentList, Auto autoOfInterest){
+    public static Auto searchForPosition(int index, String currentFileName){
+        
+        ArrayList<Auto> list = read(currentFileName);
+        Auto personOfInterest;
+        personOfInterest = list.get(index);
+        
+        return personOfInterest;        
+    }
+    
+    public static int searchForIstance(ArrayList<Auto> currentList, Auto personOfInterest){
         
         int index = -1;
         
         try{
-            index = currentList.indexOf(autoOfInterest);
+            index = currentList.indexOf(personOfInterest);
 	}catch(Exception e){
             e.printStackTrace();
         }
                 
         return index;
     }
-    
-    /*
-    public static Auto searchForName(String currentFileName, String name){
-        
-        ArrayList<Auto> list = read(currentFileName);
-        Auto personOfInterest = null;
-        
-        for(Auto p:list)
-        {
-            if(name==p.getCognome() || name ==p.getNome())
-                personOfInterest=p;
-                        
-        }
-        
-        return personOfInterest;
-        
-    }
-    
-    public static Persona searchForIndex(String currentFileName, int index){
-        
-         ArrayList<Persona> list = read(currentFileName);
-         return list.get(index);
-        
-    }
-    
-    */
 }
