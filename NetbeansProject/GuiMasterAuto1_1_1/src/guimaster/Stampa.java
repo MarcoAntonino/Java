@@ -8,6 +8,7 @@ package guimaster;
 import enumeration.Alimentazione;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import model.Auto;
 import model.MyLibrary;
 
@@ -29,6 +30,8 @@ public class Stampa extends javax.swing.JInternalFrame {
      */
     public Stampa() {
         initComponents();
+        DefaultComboBoxModel lista = new DefaultComboBoxModel(Alimentazione.values());
+        cmbAlimentazione.setModel(lista);
     }
 
     /**
@@ -54,12 +57,8 @@ public class Stampa extends javax.swing.JInternalFrame {
         lblColore = new javax.swing.JLabel();
         txtColore = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        rbtnBenzina = new javax.swing.JRadioButton();
-        rbtnDiesel = new javax.swing.JRadioButton();
-        rbtnGPL = new javax.swing.JRadioButton();
-        rbtnMetano = new javax.swing.JRadioButton();
-        rbtnIbrida = new javax.swing.JRadioButton();
         btnStampa = new javax.swing.JButton();
+        cmbAlimentazione = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -88,21 +87,6 @@ public class Stampa extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Alimentazione");
 
-        rbtngAlimentazione.add(rbtnBenzina);
-        rbtnBenzina.setText("Benzina");
-
-        rbtngAlimentazione.add(rbtnDiesel);
-        rbtnDiesel.setText("Diesel");
-
-        rbtngAlimentazione.add(rbtnGPL);
-        rbtnGPL.setText("GPL");
-
-        rbtngAlimentazione.add(rbtnMetano);
-        rbtnMetano.setText("Metano");
-
-        rbtngAlimentazione.add(rbtnIbrida);
-        rbtnIbrida.setText("Ibrida");
-
         btnStampa.setText("Stampa");
         btnStampa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,31 +111,6 @@ public class Stampa extends javax.swing.JInternalFrame {
                         .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rbtnGPL)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rbtnMetano))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rbtnBenzina)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rbtnDiesel))
-                                    .addComponent(rbtnIbrida)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCerca)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCerca, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCerca))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnStampa)
-                                .addGap(116, 116, 116)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCilindrata)
                             .addComponent(lblModello)
                             .addComponent(lblColore))
@@ -159,7 +118,21 @@ public class Stampa extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtColore)
                             .addComponent(txtModello)
-                            .addComponent(txtCilindrata))))
+                            .addComponent(txtCilindrata)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnStampa)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbAlimentazione, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCerca)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCerca, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCerca)))
+                        .addGap(0, 250, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -190,17 +163,10 @@ public class Stampa extends javax.swing.JInternalFrame {
                     .addComponent(txtColore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblColore))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(rbtnBenzina)
-                    .addComponent(rbtnDiesel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtnGPL)
-                    .addComponent(rbtnMetano))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
-                .addComponent(rbtnIbrida)
-                .addGap(33, 33, 33)
+                    .addComponent(cmbAlimentazione, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(btnStampa)
                 .addGap(58, 58, 58))
         );
@@ -221,25 +187,15 @@ public class Stampa extends javax.swing.JInternalFrame {
         }
         
         rbtngAlimentazione.clearSelection();
-
         
         txtMarca.setText(list.get(find).getMarca());
         txtModello.setText(list.get(find).getModello());
         txtCilindrata.setText(Integer.toString(list.get(find).getCilindrata()));
         txtColore.setText(list.get(find).getColore());
         
-        if(list.get(find).getAlimentazione()==Alimentazione.BENZINA){
-            rbtnBenzina.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.DIESEL){
-            rbtnDiesel.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.GPL){
-            rbtnGPL.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.METANO){
-            rbtnMetano.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.IBRIDA){
-            rbtnIbrida.doClick();
-        }
-
+        cmbAlimentazione.setSelectedItem(list.get(find).getAlimentazione());
+           
+        
 
 
     }//GEN-LAST:event_btnCercaActionPerformed
@@ -253,18 +209,10 @@ public class Stampa extends javax.swing.JInternalFrame {
         
         Auto a = new Auto (marca, modello, null, cilindrata, colore);
         
-        if (rbtnBenzina.isSelected()){
-            a.setAlimentazione(Alimentazione.BENZINA);
-        }else if (rbtnDiesel.isSelected()){
-            a.setAlimentazione(Alimentazione.DIESEL);
-        }else if (rbtnGPL.isSelected()){
-            a.setAlimentazione(Alimentazione.GPL);
-        }else if (rbtnMetano.isSelected()){
-            a.setAlimentazione(Alimentazione.METANO);
-        }else if (rbtnIbrida.isSelected()){
-            a.setAlimentazione(Alimentazione.IBRIDA);
-        }
+        a.setAlimentazione((Alimentazione) cmbAlimentazione.getSelectedItem());
+
         
+                
         MyLibrary.createTxt(txtName, a);
         
     }//GEN-LAST:event_btnStampaActionPerformed
@@ -273,6 +221,7 @@ public class Stampa extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerca;
     private javax.swing.JButton btnStampa;
+    private javax.swing.JComboBox<String> cmbAlimentazione;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCerca;
     private javax.swing.JLabel lblCilindrata;
@@ -280,11 +229,6 @@ public class Stampa extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblModello;
     private javax.swing.JLabel lblStampa;
-    private javax.swing.JRadioButton rbtnBenzina;
-    private javax.swing.JRadioButton rbtnDiesel;
-    private javax.swing.JRadioButton rbtnGPL;
-    private javax.swing.JRadioButton rbtnIbrida;
-    private javax.swing.JRadioButton rbtnMetano;
     private javax.swing.ButtonGroup rbtngAlimentazione;
     private javax.swing.JTextField txtCerca;
     private javax.swing.JTextField txtCilindrata;

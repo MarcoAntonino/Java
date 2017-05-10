@@ -1,0 +1,6 @@
+marca=Fiat
+modello=panda
+alimentazione=GPL
+cilindrata=900
+colore=lilla
+velocitaMax=100
