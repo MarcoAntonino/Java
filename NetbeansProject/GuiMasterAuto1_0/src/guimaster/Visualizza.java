@@ -27,11 +27,13 @@ public class Visualizza extends javax.swing.JInternalFrame {
     public Visualizza() {
         initComponents();
         ArrayList<Auto> list = read(fileName);
+        int i = 0;
         
         StringBuilder sb = new StringBuilder();
         for(Auto a : list)
         {
-           sb.append(a.toString()+"\n"+"\n");         
+           sb.append("Indice: "+i+"\n"+a.toString()+"\n"+"\n");
+           i++;
                       
         }
         

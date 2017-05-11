@@ -1,6 +1,6 @@
-Auto [marca=ciccio
-, modello=pastriccio
-, alimentazione=BENZINA
-, cilindrata=1200
-, colore=giallo
-, velocitaMax=170]
+marca=Ferrari
+modello=Testaquadra
+alimentazione=METANO
+cilindrata=2200
+colore=Giallognolo
+velocitaMax=200

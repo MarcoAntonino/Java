@@ -8,6 +8,7 @@ package guimaster;
 import enumeration.Alimentazione;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.Auto;
 import model.MyLibrary;
 
@@ -212,6 +213,7 @@ public class Stampa extends javax.swing.JInternalFrame {
         
         find = Integer.parseInt(txtCerca.getText());
         
+        
         a=new Auto();
         list = new ArrayList<Auto>();
         list = MyLibrary.read(fileName);
@@ -222,22 +224,26 @@ public class Stampa extends javax.swing.JInternalFrame {
         
         rbtngAlimentazione.clearSelection();
 
-        
-        txtMarca.setText(list.get(find).getMarca());
-        txtModello.setText(list.get(find).getModello());
-        txtCilindrata.setText(Integer.toString(list.get(find).getCilindrata()));
-        txtColore.setText(list.get(find).getColore());
-        
-        if(list.get(find).getAlimentazione()==Alimentazione.BENZINA){
-            rbtnBenzina.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.DIESEL){
-            rbtnDiesel.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.GPL){
-            rbtnGPL.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.METANO){
-            rbtnMetano.doClick();
-        }else if(list.get(find).getAlimentazione()==Alimentazione.IBRIDA){
-            rbtnIbrida.doClick();
+        if (find>(list.size()-1)){
+            JOptionPane.showMessageDialog(this, "Elemento inesistente");
+
+        }else{
+            txtMarca.setText(list.get(find).getMarca());
+            txtModello.setText(list.get(find).getModello());
+            txtCilindrata.setText(Integer.toString(list.get(find).getCilindrata()));
+            txtColore.setText(list.get(find).getColore());
+
+            if(list.get(find).getAlimentazione()==Alimentazione.BENZINA){
+                rbtnBenzina.doClick();
+            }else if(list.get(find).getAlimentazione()==Alimentazione.DIESEL){
+                rbtnDiesel.doClick();
+            }else if(list.get(find).getAlimentazione()==Alimentazione.GPL){
+                rbtnGPL.doClick();
+            }else if(list.get(find).getAlimentazione()==Alimentazione.METANO){
+                rbtnMetano.doClick();
+            }else if(list.get(find).getAlimentazione()==Alimentazione.IBRIDA){
+                rbtnIbrida.doClick();
+            }
         }
 
 
