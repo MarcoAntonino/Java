@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -97,7 +98,7 @@ public class MyLibrary {
         
         ArrayList<Persona> list = read(currentFileName);
         list.add(currentPersona);
-        create(currentFileName, list);        
+        create(currentFileName, list);  
     }
     
     public static Persona searchForPosition(int index, String currentFileName){
