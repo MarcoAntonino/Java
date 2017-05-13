@@ -5,8 +5,9 @@
  */
 package view;
 
-import ascensore.Ascensore;
+import ascensore.Elevator;
 import java.awt.Color;
+import model.Ascensore;
 
 /**
  *
@@ -14,23 +15,21 @@ import java.awt.Color;
  */
 public class Palazzo extends javax.swing.JFrame {
     
-    
-    Ascensore a1;
-    Ascensore a2;
-    Ascensore a3;
-
-
+     
 
     /**
      * Creates new form Palazzo
      */
     public Palazzo() {
+         
+        
         initComponents();
-        a1 = new Ascensore(0, 3);
+        txtA1.setText("0");
+       
         btnA1P0.setBackground(Color.green);
-        a2 = new Ascensore(0, 3);
+        
         btnA2P0.setBackground(Color.green);
-        a3 = new Ascensore(0, 3);
+        
         btnA2P0.setBackground(Color.green);
 
     }
@@ -65,13 +64,35 @@ public class Palazzo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtA1.setEnabled(false);
+
         btnA1P1.setText("1");
+        btnA1P1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA1P1ActionPerformed(evt);
+            }
+        });
 
         btnA1P0.setText("0");
+        btnA1P0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA1P0ActionPerformed(evt);
+            }
+        });
 
         btnA1P2.setText("2");
+        btnA1P2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA1P2ActionPerformed(evt);
+            }
+        });
 
         btnA1P3.setText("3");
+        btnA1P3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA1P3ActionPerformed(evt);
+            }
+        });
 
         btnA2P0.setText("0");
 
@@ -181,6 +202,36 @@ public class Palazzo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnA1P3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1P3ActionPerformed
+        
+        Ascensore a1 = new Ascensore(0, 3, txtA1);
+        a1.setCurrentFloor(Integer.parseInt(txtA1.getText()));
+        a1.setSelectedFloor(3);
+        
+        
+    }//GEN-LAST:event_btnA1P3ActionPerformed
+
+    private void btnA1P2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1P2ActionPerformed
+        
+        Ascensore a1 = new Ascensore(0, 3, txtA1);
+        a1.setCurrentFloor(Integer.parseInt(txtA1.getText()));
+        a1.setSelectedFloor(2);
+        
+    }//GEN-LAST:event_btnA1P2ActionPerformed
+
+    private void btnA1P1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1P1ActionPerformed
+        
+        Ascensore a1 = new Ascensore(0, 3, txtA1);
+        a1.setCurrentFloor(Integer.parseInt(txtA1.getText()));
+        a1.setSelectedFloor(1);
+    }//GEN-LAST:event_btnA1P1ActionPerformed
+
+    private void btnA1P0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1P0ActionPerformed
+        Ascensore a1 = new Ascensore(0, 3, txtA1);
+        a1.setCurrentFloor(Integer.parseInt(txtA1.getText()));
+        a1.setSelectedFloor(0);
+    }//GEN-LAST:event_btnA1P0ActionPerformed
 
     /**
      * @param args the command line arguments

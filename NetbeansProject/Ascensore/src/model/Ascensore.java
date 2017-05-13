@@ -7,6 +7,7 @@ package model;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -14,82 +15,129 @@ import java.util.logging.Logger;
  */
 public class Ascensore implements Runnable{
     
-    private int minPiano;
-    private int maxPiano;
-    private int currentPiano;
-    private int selectedPiano;
+    private int minFloor;
+    private int maxFloor;
+    private int currentFloor;
+    private int selectedFloor;
+    private JTextField output;
     
     
 
     
     public Ascensore(int minPiano, int maxPiano) {
-        this.minPiano = minPiano;
-        this.maxPiano = maxPiano;
-        this.currentPiano = 0;
-        this.selectedPiano = 0;
+        this.minFloor = minPiano;
+        this.maxFloor = maxPiano;
+        this.currentFloor = 0;
+        this.selectedFloor = 0;
         Thread t = new Thread(this);
         t.start();
     }
-    
-    
 
-    public int getMinPiano() {
-        return minPiano;
-    }
-
-    public void setMinPiano(int minPiano) {
-        this.minPiano = minPiano;
-    }
-
-    public int getMaxPiano() {
-        return maxPiano;
-    }
-
-    public void setMaxPiano(int maxPiano) {
-        this.maxPiano = maxPiano;
-    }
-
-    public int getCurrentPiano() {
-        return currentPiano;
-    }
-
-    public void setCurrentPiano(int currentPiano) {
-        this.currentPiano = currentPiano;
-    }
-
-    public int getSelectedPiano() {
-        return selectedPiano;
-    }
-
-    public void setSelectedPiano(int selectedPiano) {
-        this.selectedPiano = selectedPiano;
+    public Ascensore(int minFloor, int maxFloor, JTextField output) {
+        this.minFloor = minFloor;
+        this.maxFloor = maxFloor;
+        this.output = output;
+        Thread t = new Thread(this);
+        t.start();
+        this.currentFloor = 0;
+        this.selectedFloor = 0;
     }
     
+    public Ascensore(int minFloor, int maxFloor, int currentFloor, JTextField output) {
+        this.minFloor = minFloor;
+        this.maxFloor = maxFloor;
+        this.output = output;
+        Thread t = new Thread(this);
+        t.start();
+        this.currentFloor = 0;
+        this.selectedFloor = 0;
+    }
+
+    public int getMinFloor() {
+        return minFloor;
+    }
+
+    public void setMinFloor(int minFloor) {
+        this.minFloor = minFloor;
+    }
+
+    public int getMaxFloor() {
+        return maxFloor;
+    }
+
+    public void setMaxFloor(int maxFloor) {
+        this.maxFloor = maxFloor;
+    }
+
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+    }
+
+    public int getSelectedFloor() {
+        return selectedFloor;
+    }
+
+    public void setSelectedFloor(int selectedFloor) {
+        this.selectedFloor = selectedFloor;
+    }
+
+    public JTextField getOutput() {
+        return output;
+    }
+
+    public void setOutput(JTextField output) {
+        this.output = output;
+    }
     
+     
 
     @Override
     public String toString() {
-        return "Ascensore{" + "minPiano=" + minPiano + ", maxPiano=" + maxPiano + ", currentPiano=" + currentPiano + '}';
+        return "Ascensore{" + "minPiano=" + minFloor + ", maxPiano=" + maxFloor + ", currentPiano=" + currentFloor + '}';
     }
 
     @Override
     public void run() {
         
-        while(currentPiano!=selectedPiano)
-        {
-            muovi();
-        }
+        if (this.getCurrentFloor()!=this.getSelectedFloor()){
+                
+                    int direction = currentFloor-selectedFloor;
+                    if(direction<0)//si sale
+                    {
+                        for(currentFloor= currentFloor;currentFloor<=selectedFloor;currentFloor++)
+                        {
+                            output.setText(String.valueOf(getCurrentFloor()));
+                            try {    
+
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException ex) {
+                                    Logger.getLogger(Ascensore.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            
+                        }
+                    }else{//si scende
+                        for(currentFloor= currentFloor;currentFloor>=selectedFloor;currentFloor--)
+                        {
+                            output.setText(String.valueOf(getCurrentFloor()));
+                            try {    
+
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException ex) {
+                                Logger.getLogger(Ascensore.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        }
+                    }
+                    
+                    this.setCurrentFloor(this.getSelectedFloor());
+            
     }
    
 
 
- public void muovi() {
-        try {
-            int movimento = selectedPiano-currentPiano;
-            currentPiano=(movimento>0) ? currentPiano+1: currentPiano-1;
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Ascensore.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+  }
 }
