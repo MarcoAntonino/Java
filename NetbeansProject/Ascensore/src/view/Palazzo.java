@@ -15,6 +15,7 @@ import model.Ascensore;
  */
 public class Palazzo extends javax.swing.JFrame {
     
+     Ascensore a2 = new Ascensore(0, 3);
      
 
     /**
@@ -25,6 +26,9 @@ public class Palazzo extends javax.swing.JFrame {
         
         initComponents();
         txtA1.setText("0");
+        txtA2.setText(String.valueOf(a2.getCurrentFloor()));
+        
+        a2.setOutput(txtA2);
        
         btnA1P0.setBackground(Color.green);
         
@@ -101,6 +105,11 @@ public class Palazzo extends javax.swing.JFrame {
         btnA2P2.setText("2");
 
         btnA2P3.setText("3");
+        btnA2P3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA2P3ActionPerformed(evt);
+            }
+        });
 
         btnA3P3.setText("3");
 
@@ -232,6 +241,16 @@ public class Palazzo extends javax.swing.JFrame {
         a1.setCurrentFloor(Integer.parseInt(txtA1.getText()));
         a1.setSelectedFloor(0);
     }//GEN-LAST:event_btnA1P0ActionPerformed
+
+    private void btnA2P3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA2P3ActionPerformed
+       
+        a2.setOutput(txtA2);
+        a2.setSelectedFloor(3);
+        a2.setOutput(txtA2);
+
+        
+
+    }//GEN-LAST:event_btnA2P3ActionPerformed
 
     /**
      * @param args the command line arguments

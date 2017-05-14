@@ -31,6 +31,7 @@ public class Ascensore implements Runnable{
         this.selectedFloor = 0;
         Thread t = new Thread(this);
         t.start();
+        
     }
 
     public Ascensore(int minFloor, int maxFloor, JTextField output) {

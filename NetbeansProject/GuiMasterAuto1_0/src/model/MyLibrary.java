@@ -70,9 +70,24 @@ public class MyLibrary {
     }
     
         
-    public static void aggiungiTxt(String currentFileName, Auto currentAuto){
+    public static void createTxt(String currentFileName, ArrayList<Auto> newArrayList){
         
-        ArrayList<Auto> list = read(currentFileName);
+        String testo = newArrayList.toString();
+        
+        FileWriter fw = null; //seleziona la risorsa
+        BufferedWriter bw = null; //gestisce, scrive la risorsa
+        try {
+            fw = new FileWriter(currentFileName);
+            bw = new BufferedWriter(fw);
+            bw.write(testo);
+            bw.flush();
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
     }
        
     

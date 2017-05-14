@@ -6,7 +6,9 @@
 package guimaster;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.Auto;
+import static model.MyLibrary.createTxt;
 import static model.MyLibrary.read;
 
 /**
@@ -53,6 +55,7 @@ public class Visualizza extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtVisualizza = new javax.swing.JTextArea();
+        btnStampa = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -67,6 +70,13 @@ public class Visualizza extends javax.swing.JInternalFrame {
         txtVisualizza.setRows(5);
         jScrollPane1.setViewportView(txtVisualizza);
 
+        btnStampa.setText("Stampa lista");
+        btnStampa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStampaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,6 +89,10 @@ public class Visualizza extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnStampa)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,14 +101,25 @@ public class Visualizza extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnStampa)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnStampaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStampaActionPerformed
+        
+        ArrayList<Auto> list = read(fileName);
+        String txtName = "listaAuto.txt";
+        createTxt(txtName, list);
+        JOptionPane.showMessageDialog(this, "Elemento stampato su file");
+    }//GEN-LAST:event_btnStampaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnStampa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtVisualizza;

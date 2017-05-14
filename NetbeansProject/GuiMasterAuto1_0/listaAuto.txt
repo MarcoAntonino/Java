@@ -1,0 +1,11 @@
+[marca=Fiat
+modello=Panda
+alimentazione=BENZINA
+cilindrata=900
+colore=Bianco
+velocitaMax=140, marca=Fiat
+modello=Punto
+alimentazione=DIESEL
+cilindrata=1300
+colore=Blu
+velocitaMax=160]

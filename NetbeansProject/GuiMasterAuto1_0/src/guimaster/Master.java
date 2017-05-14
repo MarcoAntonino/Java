@@ -43,6 +43,8 @@ public class Master extends javax.swing.JFrame {
         mnuItemNuovo = new javax.swing.JMenuItem();
         mnuItemVisualizza = new javax.swing.JMenuItem();
         mnuItemStampa = new javax.swing.JMenuItem();
+        mnuItemAggiorna = new javax.swing.JMenuItem();
+        mnuItemElimina = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -123,6 +125,22 @@ public class Master extends javax.swing.JFrame {
         });
         mnuAuto.add(mnuItemStampa);
 
+        mnuItemAggiorna.setText("Aggiorna");
+        mnuItemAggiorna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemAggiornaActionPerformed(evt);
+            }
+        });
+        mnuAuto.add(mnuItemAggiorna);
+
+        mnuItemElimina.setText("Elimina");
+        mnuItemElimina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemEliminaActionPerformed(evt);
+            }
+        });
+        mnuAuto.add(mnuItemElimina);
+
         menuBar.add(mnuAuto);
 
         helpMenu.setMnemonic('h');
@@ -181,6 +199,20 @@ public class Master extends javax.swing.JFrame {
         this.desktopPane.add(s);
     }//GEN-LAST:event_mnuItemStampaActionPerformed
 
+    private void mnuItemAggiornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemAggiornaActionPerformed
+        
+        Aggiorna a = new Aggiorna();
+        a.setVisible(true);
+        this.desktopPane.add(a);
+    }//GEN-LAST:event_mnuItemAggiornaActionPerformed
+
+    private void mnuItemEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemEliminaActionPerformed
+        
+        Elimina e = new Elimina();
+        e.setVisible(true);
+        this.desktopPane.add(e);
+    }//GEN-LAST:event_mnuItemEliminaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -230,6 +262,8 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuAuto;
+    private javax.swing.JMenuItem mnuItemAggiorna;
+    private javax.swing.JMenuItem mnuItemElimina;
     private javax.swing.JMenuItem mnuItemNuovo;
     private javax.swing.JMenuItem mnuItemStampa;
     private javax.swing.JMenuItem mnuItemVisualizza;

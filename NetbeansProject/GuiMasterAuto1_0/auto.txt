@@ -1,6 +1,6 @@
-marca=Ferrari
-modello=Testaquadra
-alimentazione=METANO
-cilindrata=2200
-colore=Giallognolo
-velocitaMax=200
+marca=Ford
+modello=Escort
+alimentazione=BENZINA
+cilindrata=1000
+colore=Grigio
+velocitaMax=150
