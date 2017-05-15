@@ -1,0 +1,6 @@
+marca=Ford
+modello=Escort
+alimentazione=BENZINA
+cilindrata=1000
+colore=Grigio
+velocitaMax=150

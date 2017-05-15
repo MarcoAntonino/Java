@@ -1,0 +1,5 @@
+package interfacceFile;
+
+public interface Icrud {
+
+}

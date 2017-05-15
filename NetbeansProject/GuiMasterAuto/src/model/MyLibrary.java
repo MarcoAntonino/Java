@@ -53,11 +53,12 @@ public class MyLibrary {
     
     public static void createTxt(String newFileName, Auto newAuto){
         
-        File f = new File(newFileName);
+        
         String testo = newAuto.toString();
         
         FileWriter fw = null; //seleziona la risorsa
         BufferedWriter bw = null; //gestisce, scrive la risorsa
+        
         try {
             fw = new FileWriter(newFileName);
             bw = new BufferedWriter(fw);
@@ -68,6 +69,8 @@ public class MyLibrary {
         } catch (IOException ex) {
             Logger.getLogger(MyLibrary.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
         
         
         
@@ -126,22 +129,13 @@ public class MyLibrary {
         create(currentFileName, list);        
     }
     
-    public static Auto searchForPosition(int index, String currentFileName){
-        
-        ArrayList<Auto> list = read(currentFileName);
-        Auto personOfInterest;
-        personOfInterest = list.get(index);
-        
-        return personOfInterest;        
-    }
-    
-    public static int searchForIstance(String currentFileName, 
-            ArrayList<Auto> currentList, Auto personOfInterest){
+       
+    public static int search(ArrayList<Auto> currentList, Auto autoOfInterest){
         
         int index = -1;
         
         try{
-            index = currentList.indexOf(personOfInterest);
+            index = currentList.indexOf(autoOfInterest);
 	}catch(Exception e){
             e.printStackTrace();
         }

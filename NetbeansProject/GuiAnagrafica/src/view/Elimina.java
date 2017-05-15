@@ -256,6 +256,10 @@ public class Elimina extends javax.swing.JFrame {
         
         list.remove(find);
         create(fileName, list);
+        
+    //JOptionPane.showConfirmDialog(parentComponent, list, currentFileName, 0)
+
+
 
         
         
@@ -272,7 +276,6 @@ public class Elimina extends javax.swing.JFrame {
             if(o instanceof Persona)
             p=(Persona)o;
         }        
-        
             
         txtNome.setText(list.get(find).getNome());
         txtCognome.setText(list.get(find).getCognome());

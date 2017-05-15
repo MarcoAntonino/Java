@@ -1,6 +1,6 @@
-Auto [marca=ciccio
-, modello=pastriccio
-, alimentazione=BENZINA
-, cilindrata=1200
-, colore=giallo
-, velocitaMax=170]
+Auto [marca=Alfa Romeo
+, modello=Giulietta
+, alimentazione=DIESEL
+, cilindrata=1600
+, colore=Blue
+, velocitaMax=190]
