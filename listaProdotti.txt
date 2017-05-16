@@ -1,0 +1,3 @@
+a0;processore;intel1;scarso;5;100
+a1;memoria;m3m200;scarsa;6;20
+a3;harddisk;h4d65;scarso;7;30
