@@ -34,6 +34,7 @@ public class NewAuto extends javax.swing.JInternalFrame {
         initComponents();
         DefaultComboBoxModel lista = new DefaultComboBoxModel(Alimentazione.values());
         cmbAlimentazione.setModel(lista);
+        
     }
 
     /**
@@ -240,12 +241,15 @@ public class NewAuto extends javax.swing.JInternalFrame {
 
             Auto a = new Auto (marca, modello, null, cilindrata, colore);
             
+            
+            
             a.setAlimentazione((Alimentazione) cmbAlimentazione.getSelectedItem());
             
             list = MyLibrary.read(fileName);
             index = MyLibrary.searchForIstance(list, a);
             
             if (index != -1){
+                
                 JOptionPane.showMessageDialog(this, "Elemento esistente!"); 
             }else{
 
